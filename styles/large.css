@@ -1,0 +1,11 @@
+@media screen and (min-width: 640px) {
+  nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  #menuBtn {
+    display: none;
+  }
+}

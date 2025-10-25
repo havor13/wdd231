@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Course Home Page for WDD 231">
+  <meta name="author" content="Sampson Havor">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD 231 | Home</title>
+  <link rel="stylesheet" href="css/small.css">
+  <link rel="stylesheet" href="css/larger.css" media="screen and (min-width: 640px)">
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/course.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="images/logo.webp" alt="Site Logo">
+    <span>Sampson Havor</span>
+    <button id="menuBtn">☰</button>
+  </header>
+
+  <nav id="mainNav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Chamber</a></li>
+      <li><a href="#">Final</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Home</h1>
+    <section>
+      <h2>Welcome</h2>
+      <p>This is your course homepage for WDD 231.</p>
+    </section>
+    <section>
+      <h2>Course List</h2>
+      <div id="courseFilters">
+        <button id="allBtn">All Courses</button>
+        <button id="wddBtn">WDD Courses</button>
+        <button id="cseBtn">CSE Courses</button>
+      </div>
+      <div id="courseCards"></div>
+      <p>Total Credits: <span id="totalCredits">0</span></p>
+    </section>
+    <section>
+      <h2>Resources</h2>
+      <p>Links to GitHub, LinkedIn, and other resources.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <a href="https://github.com/sampsonhavor" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/sampsonhavor" target="_blank">LinkedIn</a>
+    </div>
+    <p>&copy; <span id="year"></span> Sampson Havor, Kumasi, Ghana</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>

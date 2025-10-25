@@ -14,11 +14,8 @@ header, nav, main, footer {
 }
 
 nav ul {
-  display: none;
-  list-style: none;
-  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
-nav ul.show {
-  display: block;
-}

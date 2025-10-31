@@ -1,6 +1,6 @@
 const menuBtn = document.getElementById('menuBtn');
-const nav = document.getElementById('mainNav').querySelector('ul');
+const mainNav = document.getElementById('mainNav');
 
 menuBtn.addEventListener('click', () => {
-  nav.classList.toggle('show');
+  mainNav.classList.toggle('open');
 });

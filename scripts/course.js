@@ -15,7 +15,7 @@ function renderCourses(filtered) {
   filtered.forEach(course => {
     const card = document.createElement('div');
     card.textContent = `${course.code}: ${course.name} (${course.credits} credits)`;
-    card.style.backgroundColor = course.completed ? '#cfc' : '#fcc';
+    card.className = course.completed ? 'completed' : 'incomplete';
     courseCards.appendChild(card);
     credits += course.credits;
   });

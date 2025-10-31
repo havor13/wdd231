@@ -1,5 +1,5 @@
 @media screen and (min-width: 640px) {
-  nav ul {
+  #mainNav ul {
     display: flex;
     justify-content: center;
     gap: 2rem;

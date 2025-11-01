@@ -9,23 +9,31 @@ const courseCards = document.getElementById('courseCards');
 const totalCredits = document.getElementById('totalCredits');
 
 function renderCourses(filtered) {
+  // Clear old cards
   courseCards.innerHTML = '';
-  let credits = 0;
 
+  // Render each course card
   filtered.forEach(course => {
     const card = document.createElement('div');
     card.textContent = `${course.code}: ${course.name} (${course.credits} credits)`;
     card.className = course.completed ? 'completed' : 'incomplete';
     courseCards.appendChild(card);
-    credits += course.credits;
   });
 
+  // Use reduce to calculate credits dynamically
+  const credits = filtered.reduce((sum, course) => sum + course.credits, 0);
   totalCredits.textContent = credits;
 }
 
-document.getElementById('allBtn').addEventListener('click', () => renderCourses(courses));
-document.getElementById('wddBtn').addEventListener('click', () => renderCourses(courses.filter(c => c.code.startsWith('WDD'))));
-document.getElementById('cseBtn').addEventListener('click', () => renderCourses(courses.filter(c => c.code.startsWith('CSE'))));
+// Event listeners for filter buttons
+document.getElementById('allBtn')
+  .addEventListener('click', () => renderCourses(courses));
+
+document.getElementById('wddBtn')
+  .addEventListener('click', () => renderCourses(courses.filter(c => c.code.startsWith('WDD'))));
+
+document.getElementById('cseBtn')
+  .addEventListener('click', () => renderCourses(courses.filter(c => c.code.startsWith('CSE'))));
 
 // Initial render
 renderCourses(courses);

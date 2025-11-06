@@ -1,0 +1,31 @@
+/* Minimal normalize/reset for project */
+
+/* Remove default margins and padding */
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a consistent base font */
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Ensure images scale properly */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* Reset links */
+a {
+  text-decoration: none;
+  color: inherit;
+}

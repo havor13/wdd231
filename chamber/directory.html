@@ -4,16 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kumasi Chamber Directory</title>
-  <meta name="description" content="Directory of Kumasi Chamber of Commerce members.">
+  <meta name="description" content="Explore the Kumasi Chamber of Commerce member directory featuring local businesses, services, and opportunities.">
   <meta name="author" content="Sampson Havor">
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="styles/normalize.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://kumasi-chamber.org/directory.html">
+
+  <!-- Open Graph metadata -->
+  <meta property="og:title" content="Kumasi Chamber Directory — Explore local businesses and services in Ashanti">
+  <meta property="og:description" content="Browse the Kumasi Chamber of Commerce member directory to connect with local businesses, discover services, and find new opportunities in Ashanti.">
+  <meta property="og:image" content="https://kumasi-chamber.org/images/og-directory-1200x630.jpg">
+  <meta property="og:url" content="https://kumasi-chamber.org/directory.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kumasi Chamber of Commerce">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kumasi Chamber Directory — Explore local businesses and services in Ashanti">
+  <meta name="twitter:description" content="Browse the Kumasi Chamber of Commerce member directory to connect with local businesses, discover services, and find new opportunities in Ashanti.">
+  <meta name="twitter:image" content="https://kumasi-chamber.org/images/og-directory-1200x630.jpg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
     <div class="logo">
       <img src="images/logo.webp" alt="Kumasi Chamber logo" class="logo-img">
-      <span>Kumasi Chamber</span>
+      <span class="logo-text">Kumasi Chamber</span>
     </div>
     <nav>
       <button class="menu-toggle" aria-label="Toggle menu">☰</button>
@@ -33,6 +59,7 @@
       <button id="list" aria-pressed="false">List View</button>
     </div>
     <section id="members" class="grid-view">
+      <h2 class="visually-hidden">Member Listings</h2>
       <!-- Members populated by JS -->
     </section>
   </main>

@@ -15,7 +15,7 @@ body {
 
 /* Header */
 header {
-  background-color: #004080; /* deep blue */
+  background-color: #004080; /* lighter blue */
   color: #fff;
   padding: 1rem;
   display: flex;
@@ -56,7 +56,7 @@ nav {
 }
 
 .nav-links a {
-  color: #fff;
+  color: #fff; /* instead of dark gray */
   text-decoration: none;
   font-weight: 500;
 }
@@ -164,4 +164,106 @@ footer {
 
 .member-card p strong {
   color: #004080; /* deep blue for emphasis */
+}
+
+/* Hero Section */
+.hero {
+  background: url("images/hero-bg.jpg") center/cover no-repeat;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #004080; /* deep chamber blue */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0066cc; /* lighter blue on hover */
+}
+
+/* Highlights Section */
+.highlights {
+  padding: 3rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.highlights h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #004080;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.highlight {
+  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.highlight:hover {
+  transform: translateY(-5px);
+}
+
+.highlight h3 {
+  margin-bottom: 0.75rem;
+  color: #004080;
+}
+
+/* Call to Action Section */
+.cta {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #004080;
+  color: #fff;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  margin-bottom: 2rem;
+}
+
+.cta-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-links .cta-button {
+  background-color: #ffcc00; /* chamber gold */
+  color: #004080;
+}
+
+.cta-links .cta-button:hover {
+  background-color: #ffd633;
 }

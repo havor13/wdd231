@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Ashanti Tech Solutions",
+    "address": "Adum, Kumasi, Ghana",
+    "phone": "+233 20 123 4567",
+    "website": "https://ashantitech.example.com",
+    "image": "ashanti-tech.png",
+    "membership": 3
+  },
+  {
+    "name": "Kente Showcase",
+    "address": "Kejetia Market, Kumasi, Ghana",
+    "phone": "+233 24 789 0123",
+    "website": "https://kenteshowcase.example.com",
+    "image": "kente-showcase.png",
+    "membership": 2
+  },
+  {
+    "name": "Ghana Wellness Hub",
+    "address": "Bantama, Kumasi, Ghana",
+    "phone": "+233 26 234 5678",
+    "website": "https://ghanawellness.example.com",
+    "image": "ghana-wellness.png",
+    "membership": 1
+  },
+  {
+    "name": "Adinkra Artisans",
+    "address": "Amakom, Kumasi, Ghana",
+    "phone": "+233 27 345 6789",
+    "website": "https://adinkra-artisans.example.com",
+    "image": "adinkra-artisans.png",
+    "membership": 3
+  },
+  {
+    "name": "Kumasi Coffee Roasters",
+    "address": "Ahodwo, Kumasi, Ghana",
+    "phone": "+233 55 456 7890",
+    "website": "https://kumasicoffee.example.com",
+    "image": "kumasi-coffee.png",
+    "membership": 1
+  },
+  {
+    "name": "Baobab Boutique",
+    "address": "Asafo, Kumasi, Ghana",
+    "phone": "+233 27 567 8901",
+    "website": "https://baobabboutique.example.com",
+    "image": "baobab-boutique.png",
+    "membership": 2
+  },
+  {
+    "name": "Akua's Natural Skincare",
+    "address": "Tafo, Kumasi, Ghana",
+    "phone": "+233 24 678 9012",
+    "website": "https://akuaskincare.example.com",
+    "image": "akua-skincare.png",
+    "membership": 1
+  }
+]

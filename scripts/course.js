@@ -37,3 +37,4 @@ document.getElementById('cseBtn')
 
 // Initial render
 renderCourses(courses);
+

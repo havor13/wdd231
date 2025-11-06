@@ -1,58 +1,74 @@
 [
   {
-    "name": "Ashanti Tech Solutions",
-    "address": "Adum, Kumasi, Ghana",
-    "phone": "+233 20 123 4567",
-    "website": "https://ashantitech.example.com",
-    "image": "ashanti-tech.png",
-    "membership": 3
+    "name": "Kwame Mensah",
+    "business": "Ashanti Textiles Ltd.",
+    "industry": "Manufacturing",
+    "email": "kwame@ashantitextiles.com"
   },
   {
-    "name": "Kente Showcase",
-    "address": "Kejetia Market, Kumasi, Ghana",
-    "phone": "+233 24 789 0123",
-    "website": "https://kenteshowcase.example.com",
-    "image": "kente-showcase.png",
-    "membership": 2
+    "name": "Freda Mensah",
+    "business": "Kumasi Foods",
+    "industry": "Food & Beverage",
+    "email": "freda@kumasi-foods.com"
   },
   {
-    "name": "Ghana Wellness Hub",
-    "address": "Bantama, Kumasi, Ghana",
-    "phone": "+233 26 234 5678",
-    "website": "https://ghanawellness.example.com",
-    "image": "ghana-wellness.png",
-    "membership": 1
+    "name": "Yaw Owusu",
+    "business": "Owusu Tech Solutions",
+    "industry": "Technology",
+    "email": "yaw@owusutech.com"
   },
   {
-    "name": "Adinkra Artisans",
-    "address": "Amakom, Kumasi, Ghana",
-    "phone": "+233 27 345 6789",
-    "website": "https://adinkra-artisans.example.com",
-    "image": "adinkra-artisans.png",
-    "membership": 3
+    "name": "Locadia Kanyir",
+    "business": "Locacious Boutique",
+    "industry": "Retail & Fashion",
+    "email": "loca@kanyirboutique.com"
   },
   {
-    "name": "Kumasi Coffee Roasters",
-    "address": "Ahodwo, Kumasi, Ghana",
-    "phone": "+233 55 456 7890",
-    "website": "https://kumasicoffee.example.com",
-    "image": "kumasi-coffee.png",
-    "membership": 1
+    "name": "Amos Asante",
+    "business": "Asante Logistics",
+    "industry": "Transport & Logistics",
+    "email": "kojo@asantelogistics.com"
   },
   {
-    "name": "Baobab Boutique",
-    "address": "Asafo, Kumasi, Ghana",
-    "phone": "+233 27 567 8901",
-    "website": "https://baobabboutique.example.com",
-    "image": "baobab-boutique.png",
-    "membership": 2
+    "name": "Efua Adjei",
+    "business": "Adjei Legal Consult",
+    "industry": "Legal Services",
+    "email": "efua@adjeilegal.com"
   },
   {
-    "name": "Akua's Natural Skincare",
-    "address": "Tafo, Kumasi, Ghana",
-    "phone": "+233 24 678 9012",
-    "website": "https://akuaskincare.example.com",
-    "image": "akua-skincare.png",
-    "membership": 1
+    "name": "Michael Owusu",
+    "business": "Owusu Construction Ltd.",
+    "industry": "Construction",
+    "email": "michael@owusuconstruction.com"
+  },
+  {
+    "name": "Nana Kofi",
+    "business": "Kofi Agro Farms",
+    "industry": "Agriculture",
+    "email": "nana@kofiagro.com"
+  },
+  {
+    "name": "Akua Danso",
+    "business": "Danso Media",
+    "industry": "Media & Communications",
+    "email": "akua@dansomedia.com"
+  },
+  {
+    "name": "Kwabena Agyeman",
+    "business": "Agyeman Finance",
+    "industry": "Financial Services",
+    "email": "kwabena@agyemanfinance.com"
+  },
+  {
+    "name": "Adwoa Osei",
+    "business": "Osei Wellness Center",
+    "industry": "Health & Wellness",
+    "email": "adwoa@oseiwellness.com"
+  },
+  {
+    "name": "Josephine Appiah",
+    "business": "Appiah Education Services",
+    "industry": "Education",
+    "email": "josephine@appiahedu.com"
   }
 ]

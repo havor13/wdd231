@@ -1,31 +1,91 @@
-/* Minimal normalize/reset for project */
+/* normalize.css */
 
-/* Remove default margins and padding */
-html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
-  margin: 0;
-  padding: 0;
+/* Document
+   ========================================================================== */
+html {
+  line-height: 1.15; /* Better default line-height */
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
 }
 
-/* Set a consistent base font */
+/* Sections
+   ========================================================================== */
 body {
-  font-family: 'Open Sans', Arial, sans-serif;
-  line-height: 1.6;
+  margin: 0; /* Remove default margin */
 }
 
-/* Ensure images scale properly */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* Headings
+   ========================================================================== */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
 }
 
-/* Remove list styles */
-ul, ol {
-  list-style: none;
-}
-
-/* Reset links */
-a {
-  text-decoration: none;
+/* Grouping content
+   ========================================================================== */
+hr {
+  height: 0;
   color: inherit;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Embedded content
+   ========================================================================== */
+img {
+  border-style: none;
+  max-width: 100%; /* Responsive images */
+  height: auto;
+}
+
+/* Forms
+   ========================================================================== */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  appearance: button;        /* Standard property */
+  -webkit-appearance: button; /* Vendor prefix for WebKit browsers */
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Interactive
+   ========================================================================== */
+[hidden] {
+  display: none;
 }

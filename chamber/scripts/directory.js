@@ -1,64 +1,46 @@
-async function loadMembers() {
-  try {
-    const response = await fetch('data/members.json');
-    const members = await response.json();
+// scripts/directory.js
+
+const membersContainer = document.getElementById("members");
+const gridBtn = document.getElementById("grid");
+const listBtn = document.getElementById("list");
+
+// ✅ Fetch members.json from /data/
+fetch("data/members.json")
+  .then(response => response.json())
+  .then(members => {
     displayMembers(members);
-  } catch (error) {
-    console.error('Error loading members:', error);
-    document.getElementById('members').innerHTML = '<p>Unable to load members.</p>';
-  }
-}
+  })
+  .catch(error => console.error("Error loading members:", error));
 
+// ✅ Render members with industry included
 function displayMembers(members) {
-  const container = document.getElementById('members');
-  container.innerHTML = '';
-
+  membersContainer.innerHTML = "";
   members.forEach(member => {
-    const card = document.createElement('article');
-    card.className = 'member-card';
+    const card = document.createElement("div");
+    card.classList.add("member-card");
 
     card.innerHTML = `
-      <img src="images/business-logos/${member.image}" alt="${member.name} logo" class="member-logo">
       <h3>${member.name}</h3>
-      <p><strong>Address:</strong> ${member.address}</p>
-      <p><strong>Phone:</strong> ${member.phone}</p>
-      <p><strong>Membership:</strong> ${formatMembership(member.membership)}</p>
-      <a href="${member.website}" class="btn-link" target="_blank" rel="noopener">Visit website</a>
+      <p><strong>Business:</strong> ${member.business}</p>
+      <p><strong>Industry:</strong> ${member.industry}</p>
+      <p><strong>Email:</strong> <a href="mailto:${member.email}">${member.email}</a></p>
     `;
 
-    container.appendChild(card);
+    membersContainer.appendChild(card);
   });
 }
 
-function formatMembership(level) {
-  switch (Number(level)) {
-    case 1: return 'Member';
-    case 2: return 'Silver';
-    case 3: return 'Gold';
-    default: return 'Member';
-  }
-}
-
-// Toggle buttons
-document.getElementById('grid').addEventListener('click', () => {
-  const members = document.getElementById('members');
-  members.classList.add('grid-view');
-  members.classList.remove('list-view');
-  setPressed('grid', true);
-  setPressed('list', false);
+// ✅ Toggle views with ARIA states
+gridBtn.addEventListener("click", () => {
+  membersContainer.classList.add("grid-view");
+  membersContainer.classList.remove("list-view");
+  gridBtn.setAttribute("aria-pressed", "true");
+  listBtn.setAttribute("aria-pressed", "false");
 });
 
-document.getElementById('list').addEventListener('click', () => {
-  const members = document.getElementById('members');
-  members.classList.add('list-view');
-  members.classList.remove('grid-view');
-  setPressed('grid', false);
-  setPressed('list', true);
+listBtn.addEventListener("click", () => {
+  membersContainer.classList.add("list-view");
+  membersContainer.classList.remove("grid-view");
+  listBtn.setAttribute("aria-pressed", "true");
+  gridBtn.setAttribute("aria-pressed", "false");
 });
-
-function setPressed(id, state) {
-  const btn = document.getElementById(id);
-  btn.setAttribute('aria-pressed', String(state));
-}
-
-loadMembers();

@@ -51,7 +51,7 @@ nav {
 }
 
 .nav-links {
-  display: flex; /* ✅ Flexbox requirement */
+  display: flex;
   gap: 1rem;
   list-style: none;
 }
@@ -63,7 +63,8 @@ header nav .nav-links a {
 }
 
 header nav .nav-links a.active {
-  border-bottom: 2px solid #ffcc00; /* gold highlight */
+  color: #ffcc00; /* chamber gold for active link */
+  border-bottom: 2px solid #ffcc00;
 }
 
 /* Main Content */
@@ -78,7 +79,7 @@ h1, h2 {
 
 /* Directory Grid */
 #members.grid-view {
-  display: flex; /* ✅ Flexbox requirement */
+  display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -92,12 +93,12 @@ h1, h2 {
 }
 
 .member-card p strong {
-  color: #004080; /* deep blue for emphasis */
+  color: #004080;
 }
 
 /* Gallery */
 .images {
-  display: flex; /* ✅ Flexbox requirement */
+  display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -133,7 +134,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #003060; /* darker blue */
+  background-color: #003060;
 }
 
 /* Footer */
@@ -165,7 +166,7 @@ footer {
 
 .cta-button {
   display: inline-block;
-  background-color: #004080; /* deep chamber blue */
+  background-color: #004080;
   color: #fff;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
@@ -175,7 +176,7 @@ footer {
 }
 
 .cta-button:hover {
-  background-color: #0066cc; /* lighter blue on hover */
+  background-color: #0066cc;
 }
 
 /* Highlights Section */
@@ -239,7 +240,7 @@ footer {
 }
 
 .cta-links .cta-button {
-  background-color: #ffcc00; /* chamber gold */
+  background-color: #ffcc00;
   color: #004080;
 }
 

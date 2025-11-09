@@ -44,3 +44,10 @@ listBtn.addEventListener("click", () => {
   listBtn.setAttribute("aria-pressed", "true");
   gridBtn.setAttribute("aria-pressed", "false");
 });
+
+async function getMembers() {
+  const response = await fetch('data/members.json');
+  const data = await response.json();
+  displayMembers(data.members); // Replace with your actual display logic
+}
+getMembers();

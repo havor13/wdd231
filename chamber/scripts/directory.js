@@ -1,20 +1,24 @@
-// scripts/directory.js
-
+// Get references to DOM elements
 const membersContainer = document.getElementById("members");
 const gridBtn = document.getElementById("grid");
 const listBtn = document.getElementById("list");
 
-// ✅ Fetch members.json from /data/
-fetch("data/members.json")
-  .then(response => response.json())
-  .then(members => {
+// Fetch and display members from JSON
+async function getMembers() {
+  try {
+    const response = await fetch("data/members.json");
+    const members = await response.json(); // JSON is now a plain array
     displayMembers(members);
-  })
-  .catch(error => console.error("Error loading members:", error));
+  } catch (error) {
+    console.error("Error loading members:", error);
+  }
+}
+getMembers();
 
-// ✅ Render members with industry included
+// Render member cards dynamically
 function displayMembers(members) {
-  membersContainer.innerHTML = "";
+  membersContainer.innerHTML = ""; // Clear previous content
+
   members.forEach(member => {
     const card = document.createElement("div");
     card.classList.add("member-card");
@@ -30,7 +34,7 @@ function displayMembers(members) {
   });
 }
 
-// ✅ Toggle views with ARIA states
+// Toggle between grid and list views
 gridBtn.addEventListener("click", () => {
   membersContainer.classList.add("grid-view");
   membersContainer.classList.remove("list-view");
@@ -44,10 +48,3 @@ listBtn.addEventListener("click", () => {
   listBtn.setAttribute("aria-pressed", "true");
   gridBtn.setAttribute("aria-pressed", "false");
 });
-
-async function getMembers() {
-  const response = await fetch('data/members.json');
-  const data = await response.json();
-  displayMembers(data.members); // Replace with your actual display logic
-}
-getMembers();

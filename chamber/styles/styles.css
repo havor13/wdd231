@@ -269,3 +269,26 @@ footer {
     display: flex;
   }
 }
+
+/* List View Styles */
+#members.list-view {
+  display: block;
+}
+
+.list-view .member-card {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.list-view .member-card img {
+  display: none;
+}
+
+.member-card {
+  transition: all 0.3s ease;
+}
+

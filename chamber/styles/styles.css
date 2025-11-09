@@ -282,13 +282,9 @@ footer {
   border-radius: 0;
   padding: 1rem 0;
   margin-bottom: 1rem;
+  transition: all 0.3s ease;
 }
 
 .list-view .member-card img {
   display: none;
 }
-
-.member-card {
-  transition: all 0.3s ease;
-}
-

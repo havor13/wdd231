@@ -1,2 +1,10 @@
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+const yearSpan = document.getElementById('year');
+const modifiedPara = document.getElementById('lastModified');
+
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
+}
+
+if (modifiedPara) {
+  modifiedPara.textContent = `Last Modified: ${document.lastModified}`;
+}

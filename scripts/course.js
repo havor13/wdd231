@@ -2,39 +2,57 @@ const courses = [
   { code: "WDD 130", name: "Web Fundamentals", credits: 3, completed: true },
   { code: "WDD 231", name: "Frontend Development I", credits: 3, completed: false },
   { code: "CSE 110", name: "Intro to Programming", credits: 2, completed: true },
-  { code: "CSE 210", name: "Programming with Classes", credits: 4, completed: false }
+  { code: "CSE 210", name: "Programming with Classes", credits: 3, completed: false }
 ];
 
 const courseCards = document.getElementById('courseCards');
 const totalCredits = document.getElementById('totalCredits');
 
+// Render course cards
 function renderCourses(filtered) {
-  // Clear old cards
+  if (!courseCards || !totalCredits) return;
+
   courseCards.innerHTML = '';
 
-  // Render each course card
   filtered.forEach(course => {
     const card = document.createElement('div');
-    card.textContent = `${course.code}: ${course.name} (${course.credits} credits)`;
     card.className = course.completed ? 'completed' : 'incomplete';
+
+    card.innerHTML = `
+      <strong>${course.code}</strong>: ${course.name} 
+      <span>(${course.credits} credits)</span>
+    `;
+
     courseCards.appendChild(card);
   });
 
-  // Use reduce to calculate credits dynamically
   const credits = filtered.reduce((sum, course) => sum + course.credits, 0);
   totalCredits.textContent = credits;
 }
 
-// Event listeners for filter buttons
-document.getElementById('allBtn')
-  .addEventListener('click', () => renderCourses(courses));
+// Filter logic
+function setupFilters() {
+  const allBtn = document.getElementById('allBtn');
+  const wddBtn = document.getElementById('wddBtn');
+  const cseBtn = document.getElementById('cseBtn');
 
-document.getElementById('wddBtn')
-  .addEventListener('click', () => renderCourses(courses.filter(c => c.code.startsWith('WDD'))));
+  if (allBtn) {
+    allBtn.addEventListener('click', () => renderCourses(courses));
+  }
 
-document.getElementById('cseBtn')
-  .addEventListener('click', () => renderCourses(courses.filter(c => c.code.startsWith('CSE'))));
+  if (wddBtn) {
+    wddBtn.addEventListener('click', () =>
+      renderCourses(courses.filter(c => c.code.startsWith('WDD')))
+    );
+  }
 
-// Initial render
+  if (cseBtn) {
+    cseBtn.addEventListener('click', () =>
+      renderCourses(courses.filter(c => c.code.startsWith('CSE')))
+    );
+  }
+}
+
+// Initialize
+setupFilters();
 renderCourses(courses);
-

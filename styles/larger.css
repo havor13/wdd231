@@ -1,11 +1,12 @@
-/* Larger screens: horizontal navigation */
-#menuBtn {
-  display: none;
-}
+@media (min-width: 768px) {
+  #menuBtn {
+    display: none;
+  }
 
-#mainNav ul {
-  display: flex !important;
-  flex-direction: row;
-  justify-content: center;
-  gap: 2rem;
+  #mainNav ul {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
 }

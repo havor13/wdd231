@@ -1,13 +1,13 @@
-// Get references to DOM elements
+// Get references
 const membersContainer = document.getElementById("members");
-const gridBtn = document.getElementById("grid");
-const listBtn = document.getElementById("list");
+const gridBtn = document.getElementById("gridBtn");
+const listBtn = document.getElementById("listBtn");
 
-// Fetch and display members from JSON
+// Fetch and display members
 async function getMembers() {
   try {
     const response = await fetch("data/members.json");
-    const members = await response.json(); // JSON is now a plain array
+    const members = await response.json();
     displayMembers(members);
   } catch (error) {
     console.error("Error loading members:", error);
@@ -15,26 +15,32 @@ async function getMembers() {
 }
 getMembers();
 
-// Render member cards dynamically
+// Render member cards
 function displayMembers(members) {
-  membersContainer.innerHTML = ""; // Clear previous content
+  membersContainer.innerHTML = "";
 
   members.forEach(member => {
     const card = document.createElement("div");
     card.classList.add("member-card");
+
+    // ✅ Add membership level as a class for styling
+    if (member.membershipLevel) {
+      card.classList.add(member.membershipLevel.toLowerCase());
+    }
 
     card.innerHTML = `
       <h3>${member.name}</h3>
       <p><strong>Business:</strong> ${member.business}</p>
       <p><strong>Industry:</strong> ${member.industry}</p>
       <p><strong>Email:</strong> <a href="mailto:${member.email}">${member.email}</a></p>
+      <p class="level"><strong>Membership Level:</strong> ${member.membershipLevel}</p>
     `;
 
     membersContainer.appendChild(card);
   });
 }
 
-// Toggle between grid and list views
+// ✅ Toggle views
 gridBtn.addEventListener("click", () => {
   membersContainer.classList.add("grid-view");
   membersContainer.classList.remove("list-view");
@@ -48,3 +54,7 @@ listBtn.addEventListener("click", () => {
   listBtn.setAttribute("aria-pressed", "true");
   gridBtn.setAttribute("aria-pressed", "false");
 });
+
+// Footer year + last modified
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent = document.lastModified;

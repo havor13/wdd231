@@ -6,9 +6,6 @@
   <title>Kumasi Chamber Directory</title>
   <meta name="description" content="Explore the Kumasi Chamber of Commerce member directory featuring local businesses, services, and opportunities.">
   <meta name="author" content="Sampson Havor">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico">
@@ -50,11 +47,11 @@
       <span class="logo-text">Kumasi Chamber</span>
     </div>
     <nav>
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="discover.html">Discover</a></li>
-        <li><a href="directory.html" class="active">Directory</a></li>
+        <li><a href="directory.html" class="active" aria-current="page">Directory</a></li>
         <li><a href="join.html">Join</a></li>
       </ul>
     </nav>
@@ -62,18 +59,22 @@
 
   <main>
     <h1>Member Directory</h1>
+
+    <!-- ✅ Grid/List toggle buttons with corrected IDs -->
     <div class="view-toggle">
-      <button id="grid" aria-pressed="true">Grid View</button>
-      <button id="list" aria-pressed="false">List View</button>
+      <button id="gridBtn" aria-pressed="true">Grid View</button>
+      <button id="listBtn" aria-pressed="false">List View</button>
     </div>
+
+    <!-- ✅ Members container starts with grid-view -->
     <section id="members" class="grid-view">
       <h2 class="visually-hidden">Member Listings</h2>
-      <!-- Members populated by JS -->
+      <!-- Members populated dynamically by directory.js -->
     </section>
   </main>
 
   <footer>
-    <p>Contact: info@kumasi-chamber.org | +233554240121</p>
+    <p>Contact: info@kumasi-chamber.org | +233 554240121</p>
     <p>Sampson Havor | WDD 231</p>
     <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
   </footer>

@@ -1,11 +1,12 @@
-/* Reset */
+/* ========================= */
+/* Reset & Base Typography   */
+/* ========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Typography */
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
@@ -13,7 +14,9 @@ body {
   background-color: #fff;
 }
 
-/* Header */
+/* ========================= */
+/* Header & Navigation       */
+/* ========================= */
 header {
   background-color: #004080;
   color: #fff;
@@ -23,7 +26,6 @@ header {
   align-items: center;
 }
 
-/* Ensure all header text is white */
 header * {
   color: #fff;
 }
@@ -64,12 +66,15 @@ header nav .nav-links a {
   font-weight: 500;
 }
 
-header nav .nav-links a.active {
+header nav .nav-links a.active,
+header nav .nav-links a[aria-current="page"] {
   color: #ffcc00;
   border-bottom: 2px solid #ffcc00;
 }
 
-/* Main Content */
+/* ========================= */
+/* Main Content              */
+/* ========================= */
 main {
   padding: 2rem;
 }
@@ -79,14 +84,15 @@ h1, h2 {
   color: #004080;
 }
 
-/* Directory Grid */
+/* ========================= */
+/* Directory Grid & List     */
+/* ========================= */
 #members.grid-view {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-/* Consolidated member-card styles */
 .member-card {
   flex: 1 1 300px;
   border: 1px solid #ccc;
@@ -100,7 +106,6 @@ h1, h2 {
   color: #004080;
 }
 
-/* List View Styles */
 #members.list-view {
   display: block;
 }
@@ -118,20 +123,57 @@ h1, h2 {
   display: none;
 }
 
-/* Gallery */
+/* Membership Level Styling */
+.member-card.gold { border: 2px solid goldenrod; }
+.member-card.silver { border: 2px solid gray; }
+.member-card.bronze { border: 2px solid sienna; }
+.member-card .level { font-weight: bold; }
+
+/* ========================= */
+/* View Toggle Buttons       */
+/* ========================= */
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.view-toggle button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #004080;
+  background-color: #fff;
+  color: #004080;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.view-toggle button[aria-pressed="true"] {
+  background-color: #004080;
+  color: #fff;
+}
+
+/* ========================= */
+/* Discovery / Gallery Images*/
+/* ========================= */
 .images {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-.images img {
-  flex: 1 1 300px;
-  max-width: 100%;
+.images img,
+.discover img {
+  width: 300px;       /* fixed width */
+  height: 300px;      /* fixed height */
+  object-fit: cover;  /* crops to fit without distortion */
   border-radius: 6px;
+  display: block;
+  margin: 0 auto;
 }
 
-/* Forms (Join Page) */
+/* ========================= */
+/* Forms (Join Page)         */
+/* ========================= */
 form {
   display: flex;
   flex-direction: column;
@@ -159,7 +201,9 @@ form button:hover {
   background-color: #003060;
 }
 
-/* Footer */
+/* ========================= */
+/* Footer                    */
+/* ========================= */
 footer {
   background-color: #004080;
   color: #fff;
@@ -168,7 +212,9 @@ footer {
   margin-top: 2rem;
 }
 
-/* Hero Section */
+/* ========================= */
+/* Hero Section              */
+/* ========================= */
 .hero {
   background: url("images/hero-bg.jpg") center/cover no-repeat;
   text-align: center;
@@ -201,7 +247,9 @@ footer {
   background-color: #0066cc;
 }
 
-/* Highlights Section */
+/* ========================= */
+/* Highlights Section        */
+/* ========================= */
 .highlights {
   padding: 3rem 2rem;
   background-color: #f9f9f9;
@@ -237,7 +285,9 @@ footer {
   color: #004080;
 }
 
-/* Call to Action Section */
+/* ========================= */
+/* Call to Action Section    */
+/* ========================= */
 .cta {
   padding: 3rem 2rem;
   text-align: center;
@@ -270,7 +320,9 @@ footer {
   background-color: #ffd633;
 }
 
-/* Responsive Navigation */
+/* ========================= */
+/* Responsive Navigation     */
+/* ========================= */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -290,4 +342,24 @@ footer {
   .nav-links.show {
     display: flex;
   }
+}
+
+.history {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.timeline {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.event {
+  border-left: 4px solid #004080;
+  padding-left: 1rem;
+}
+
+.event h3 {
+  color: #004080;
+  margin-bottom: 0.5rem;
 }

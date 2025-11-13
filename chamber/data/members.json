@@ -3,73 +3,98 @@
     "name": "Emmanuella Gyamfuaa Boateng",
     "business": "Ashanti Textiles Ltd.",
     "industry": "Manufacturing",
-    "email": "nuella@ashantitextiles.com"
+    "email": "nuella@ashantitextiles.com",
+    "membershipLevel": "gold"
   },
   {
     "name": "Freda Mensah",
     "business": "Kumasi Foods",
     "industry": "Food & Beverage",
-    "email": "freda@kumasi-foods.com"
+    "email": "freda@kumasi-foods.com",
+    "membershipLevel": "silver"
   },
   {
     "name": "Jeffery Osei",
     "business": "Osei Tech Solutions",
     "industry": "Technology",
-    "email": "jeffery@oseitech.com"
+    "email": "jeffery@oseitech.com",
+    "membershipLevel": "bronze"
   },
   {
     "name": "Locadia Kanyir",
     "business": "Locacious Boutique",
     "industry": "Retail & Fashion",
-    "email": "loca@kanyirboutique.com"
+    "email": "loca@kanyirboutique.com",
+    "membershipLevel": "silver"
   },
   {
     "name": "Amos Asante",
     "business": "Asante Logistics",
     "industry": "Transport & Logistics",
-    "email": "kojo@asantelogistics.com"
+    "email": "kojo@asantelogistics.com",
+    "membershipLevel": "gold"
   },
   {
     "name": "Olivia Rubby Rigglet",
     "business": "Rigglet Legal Consult",
     "industry": "Legal Services",
-    "email": "olivia@rigglelegal.com"
+    "email": "olivia@rigglelegal.com",
+    "membershipLevel": "bronze"
   },
   {
     "name": "GIFTY MENSAH",
     "business": "Mensah Construction Ltd.",
     "industry": "Construction",
-    "email": "gift@mensahconstruction.com"
+    "email": "gift@mensahconstruction.com",
+    "membershipLevel": "silver"
   },
   {
     "name": "Daniel Yeboah",
     "business": "Yeboah's Agro Farms",
     "industry": "Agriculture",
-    "email": "daniel@yeboahagro.com"
+    "email": "daniel@yeboahagro.com",
+    "membershipLevel": "gold"
   },
   {
     "name": "Prince Mensah",
     "business": "Prince Media",
     "industry": "Media & Communications",
-    "email": "prince@mensahmedia.com"
+    "email": "prince@mensahmedia.com",
+    "membershipLevel": "silver"
   },
   {
     "name": "Sekyere Priscilla Owusu",
     "business": "Priscy's Finance",
     "industry": "Financial Services",
-    "email": "priscilla@owusufinance.com"
+    "email": "priscilla@owusufinance.com",
+    "membershipLevel": "bronze"
   },
   {
     "name": "Richmond Twum",
     "business": "Richmond Twum Center",
     "industry": "Health & Wellness",
-    "email": "richmond@twumwellness.com"
+    "email": "richmond@twumwellness.com",
+    "membershipLevel": "silver"
   },
   {
     "name": "RICHARD KWAKU KWASHIE",
     "business": "Great Care Education Services",
     "industry": "Education",
-    "email": "richard@kwashieedu.com"
+    "email": "richard@kwashieedu.com",
+    "membershipLevel": "gold"
+  },
+  {
+    "name": "Afia Osei-Asamoah",
+    "business": "Afia Consulting",
+    "industry": "Business Services",
+    "email": "afia@afiaconsulting.com",
+    "membershipLevel": "silver"
+  },
+  {
+    "name": "Monica Eklou",
+    "business": "Eklou Design Studio",
+    "industry": "Creative & Design",
+    "email": "monica@ekloudesign.com",
+    "membershipLevel": "gold"
   }
 ]
-  

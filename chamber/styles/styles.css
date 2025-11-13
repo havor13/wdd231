@@ -120,9 +120,9 @@ nav { position: relative; }
   padding: 5rem 2rem;
   color: var(--color-white);
 }
-.hero { background: url("../images/hero-bg.jpg") center/cover no-repeat; }
-.discover-hero { background-image: url("../images/discover-hero.jpg"); }
-.join-hero { background-image: url("../images/join-hero.jpg"); }
+.hero { background: url("images/hero-bg.jpg") center/cover no-repeat; }
+.discover-hero { background-image: url("images/discover-hero.jpg"); }
+.join-hero { background-image: url("images/join-hero.jpg"); }
 
 .hero::before, .discover-hero::before, .join-hero::before {
   content: "";

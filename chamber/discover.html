@@ -48,7 +48,7 @@
       <button class="menu-toggle" aria-label="Toggle menu">☰</button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="discover.html" class="active">Discover</a></li>
+        <li><a href="discover.html" class="active" aria-current="page">Discover</a></li>
         <li><a href="directory.html">Directory</a></li>
         <li><a href="join.html">Join</a></li>
       </ul>
@@ -108,6 +108,33 @@
     <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- Shared script to populate year and nicely formatted last modified -->
+  <script>
+    (function () {
+      const yearEl = document.getElementById('year');
+      const lastModEl = document.getElementById('lastModified');
+
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      if (lastModEl) {
+        // document.lastModified is a string; convert to Date for formatting
+        const raw = document.lastModified;
+        const parsed = new Date(raw);
+        const isValid = !isNaN(parsed.valueOf());
+
+        const formatter = new Intl.DateTimeFormat('en-GB', {
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+
+        lastModEl.textContent = isValid ? formatter.format(parsed) : raw;
+      }
+    })();
+  </script>
 </body>
 </html>

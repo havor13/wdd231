@@ -1,4 +1,3 @@
-
 const API_KEY = 'YOUR_OPENWEATHERMAP_API_KEY';
 
 function dayNameFrom(dt) {
@@ -17,13 +16,18 @@ export async function renderWeather({ city, countryCode, units = 'metric' }) {
     const currentEl = document.getElementById('weather-current');
     const forecastEl = document.getElementById('weather-forecast');
 
+    if (!current.main) {
+      currentEl.textContent = 'Weather data unavailable';
+      return;
+    }
+
     const temp = Math.round(current.main.temp);
     const desc = current.weather?.[0]?.description ?? '—';
     const icon = current.weather?.[0]?.icon;
 
     currentEl.innerHTML = `
       <p><strong>Now:</strong> ${temp} °C — ${desc}</p>
-      ${icon ? `<img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${desc} icon">` : ''}
+      ${icon ? `<img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${desc}">` : ''}
     `;
 
     const noonEntries = forecast.list.filter(item => item.dt_txt.includes('12:00:00')).slice(0, 3);
@@ -33,14 +37,15 @@ export async function renderWeather({ city, countryCode, units = 'metric' }) {
       const d = item.weather?.[0]?.description ?? '—';
       const ic = item.weather?.[0]?.icon;
       return `
-        <div class="forecast-card">
+        <div class="card">
           <p><strong>${dName}</strong></p>
           <p>${t} °C — ${d}</p>
-          ${ic ? `<img src="https://openweathermap.org/img/wn/${ic}.png" alt="${d} icon">` : ''}
+          ${ic ? `<img src="https://openweathermap.org/img/wn/${ic}.png" alt="${d}">` : ''}
         </div>
       `;
     }).join('');
   } catch (err) {
     console.error('Weather error:', err);
+    document.getElementById('weather-current').textContent = 'Unable to load weather data';
   }
 }

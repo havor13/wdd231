@@ -123,14 +123,14 @@ p {
   background: url("images/hero-bg.jpg") center/cover no-repeat;
   text-align: center;
   padding: 4rem 2rem;
-  color: #ffffff;
+  color: #ffcc00; /* gold text for contrast */
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 64, 128, 0.7); /* overlay ensures contrast */
+  background: rgba(0, 64, 128, 0.8); /* darker overlay */
 }
 
 .hero h1,

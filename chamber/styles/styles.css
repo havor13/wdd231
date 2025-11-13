@@ -5,7 +5,7 @@
   --color-dark-blue: #004080;
   --color-mid-blue: #0047ab;
   --color-light-blue: #0066cc;
-  --color-gold: #cc9900; /* darker gold for contrast */
+  --color-gold: #b38600; /* darker gold for WCAG AA contrast */
   --color-white: #ffffff;
   --color-black: #000000;
   --color-gray-dark: #222222;
@@ -103,7 +103,7 @@ header * {
 
 .nav-links a.active,
 .nav-links a[aria-current="page"] {
-  color: var(--color-gold);
+  color: var(--color-gold); /* accessible gold */
 }
 
 /* ========================= */
@@ -123,7 +123,7 @@ header * {
     padding: 1rem;
     flex-direction: column;
     gap: 0.75rem;
-    border: 1px solid #003060;
+    border: 1px solid var(--color-dark-blue);
     border-radius: 0.5rem;
     box-shadow: 0 8px 18px rgba(0, 64, 128, 0.25);
     z-index: 100;

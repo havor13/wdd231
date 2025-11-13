@@ -121,8 +121,8 @@ nav { position: relative; }
   color: var(--color-white);
 }
 .hero { background: url("images/hero-bg.jpg") center/cover no-repeat; }
-.discover-hero { background-image: url("images/discover-hero.jpg"); }
-.join-hero { background-image: url("images/join-hero.jpg"); }
+.discover-hero { background-image: url("images/discover-bg.jpg"); }
+.join-hero { background-image: url("images/join-bg.jpg"); }
 
 .hero::before, .discover-hero::before, .join-hero::before {
   content: "";

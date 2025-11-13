@@ -246,17 +246,16 @@ footer {
 }
 
 .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 64, 128, 0.7); /* darker overlay for contrast */
+  background: rgba(0, 64, 128, 0.7); /* ensures darker background */
+  z-index: 0;
 }
-
 .hero h1,
 .hero p,
 .hero .cta-button {
   position: relative;
+  z-index: 1; /* ensures text is above overlay */
 }
+
 
 .hero h1 {
   font-size: 2.5rem;

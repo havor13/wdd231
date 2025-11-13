@@ -32,6 +32,8 @@ body {
   background: #ffffff;
   color: #000000;
   padding: 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 6px rgba(0, 64, 128, 0.25);
 }
 
 /* ========================= */
@@ -69,16 +71,25 @@ header * {
 nav {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .menu-toggle {
   display: none;
   background: none;
-  border: none;
-  font-size: 1.5rem;
+  border: 2px solid #ffffff;
+  border-radius: 0.375rem;
+  font-size: 1.25rem;
   color: #ffffff;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
+}
+
+.menu-toggle:focus-visible {
+  outline: 3px solid #ffcc00;
+  outline-offset: 2px;
 }
 
 .nav-links {
@@ -90,13 +101,51 @@ nav {
 header nav .nav-links a {
   text-decoration: underline;
   font-weight: 500;
-  color: #0047ab;
+  color: #ffffff; /* high contrast on dark header */
 }
 
 header nav .nav-links a.active,
 header nav .nav-links a[aria-current="page"] {
-  color: #cc2a36;
+  color: #ffcc00; /* gold highlight for active link */
   text-decoration: underline;
+}
+
+/* ========================= */
+/* Responsive Navigation     */
+/* ========================= */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #004080;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    border: 1px solid #003060;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 18px rgba(0, 64, 128, 0.25);
+    z-index: 100;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    text-decoration: underline;
+    color: #ffffff;
+  }
+
+  .nav-links a.active,
+  .nav-links a[aria-current="page"] {
+    color: #ffcc00;
+  }
 }
 
 /* ========================= */
@@ -123,14 +172,14 @@ p {
   background: url("images/hero-bg.jpg") center/cover no-repeat;
   text-align: center;
   padding: 4rem 2rem;
-  color: #ffcc00; /* gold text for contrast */
+  color: #ffffff; /* white text for strong contrast */
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 64, 128, 0.8); /* darker overlay */
+  background: rgba(0, 64, 128, 0.8); /* dark overlay ensures readability */
 }
 
 .hero h1,
@@ -336,57 +385,121 @@ p {
 }
 
 /* ========================= */
-/* Directory Grid & List     */
+/* Discovery / Gallery       */
 /* ========================= */
-#members.grid-view {
+.images {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-.member-card {
-  flex: 1 1 300px;
-  border: 1px solid #cccccc;
-  padding: 1rem;
-  background-color: #f9f9f9;
+.images img,
+.discover img {
+  max-width: 100%;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
   border-radius: 6px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.member-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 2px 8px rgba(0, 64, 128, 0.12);
-}
-
-.member-card p strong {
-  color: #004080;
-}
-
-#members.list-view {
   display: block;
+  margin: 0 auto;
 }
 
-.list-view .member-card {
-  display: flex;
-  flex-direction: column;
-  border-bottom: 1px solid #cccccc;
-  border-radius: 0;
-  padding: 1rem 0;
-  margin-bottom: 1rem;
+@media (max-width: 600px) {
+  .images img,
+  .discover img {
+    width: 100%;
+    height: 150px;
+  }
 }
-
-.list-view .member-card img {
-  display: none;
-}
-
-/* Membership Level Styling */
-.member-card.gold { border: 2px solid #daa520; }
-.member-card.silver { border: 2px solid #808080; }
-.member-card.bronze { border: 2px solid #a0522d; }
-.member-card .level { font-weight: bold; }
 
 /* ========================= */
-/* View Toggle Buttons       */
+/* Forms (Join Page)         */
+/* ========================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+form label {
+  font-weight: 600;
+}
+
+form input,
+form select,
+form textarea,
+form button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+form input,
+form select,
+form textarea {
+  border: 1px solid #cccccc;
+  border-radius: 0.375rem;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: 3px solid #ffcc00;
+  outline-offset: 2px;
+}
+
+form button {
+  background-color: #004080;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #003060;
+}
+
+/* ========================= */
+/* Footer                    */
+/* ========================= */
+footer {
+  background-color: #004080;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer p + p {
+  margin-top: 0.25rem;
+}
+
+/* ========================= */
+/* History Timeline          */
+/* ========================= */
+.history {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.timeline {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.event {
+  border-left: 4px solid #004080;
+  padding-left: 1rem;
+}
+
+.event h3 {
+  color: #004080;
+  margin-bottom: 0.5rem;
+}
+
+/* ========================= */
+/* Directory View Toggle     */
 /* ========================= */
 .view-toggle {
   display: flex;
@@ -397,4 +510,14 @@ p {
 .view-toggle button {
   padding: 0.5rem 1rem;
   border: 1px solid #004080;
+  background-color: #ffffff;
+  color: #004080;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.view-toggle button[aria-pressed="true"] {
+  background-color: #004080;
+  color: #ffffff;
 }

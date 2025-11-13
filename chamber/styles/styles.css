@@ -163,9 +163,10 @@ h1, h2 {
 
 .images img,
 .discover img {
-  width: 300px;       /* fixed width */
-  height: 300px;      /* fixed height */
-  object-fit: cover;  /* crops to fit without distortion */
+  max-width: 100%;
+  width: 300px;
+  height: 200px;       /* reduced height for better balance */
+  object-fit: cover;   /* crops to fit without distortion */
   border-radius: 6px;
   display: block;
   margin: 0 auto;
@@ -216,10 +217,24 @@ footer {
 /* Hero Section              */
 /* ========================= */
 .hero {
+  position: relative;
   background: url("images/hero-bg.jpg") center/cover no-repeat;
   text-align: center;
   padding: 4rem 2rem;
   color: #fff;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 64, 128, 0.6); /* overlay for contrast */
+}
+
+.hero h1,
+.hero p,
+.hero .cta-button {
+  position: relative; /* ensures text sits above overlay */
 }
 
 .hero h1 {
@@ -298,6 +313,7 @@ footer {
 .cta h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #ffcc00; /* improved contrast */
 }
 
 .cta p {
@@ -344,6 +360,9 @@ footer {
   }
 }
 
+/* ========================= */
+/* History Timeline          */
+/* ========================= */
 .history {
   padding: 2rem;
   background-color: #f9f9f9;

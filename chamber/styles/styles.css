@@ -38,40 +38,6 @@ p { margin: 0 0 1rem; }
 a { color: inherit; }
 
 /* ========================= */
-/* Utility Classes           */
-/* ========================= */
-.card {
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-light);
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 64, 128, 0.1);
-}
-.grid-auto {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-}
-
-/* ========================= */
-/* Accessibility Utilities   */
-/* ========================= */
-.visually-hidden {
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-.skip-link { position: absolute; left: -999px; }
-.skip-link:focus {
-  left: 1rem; top: 1rem;
-  background: var(--color-white); color: var(--color-black);
-  padding: 0.5rem; border-radius: 0.25rem;
-  box-shadow: 0 2px 6px rgba(0, 64, 128, 0.25);
-}
-
-/* ========================= */
 /* Header & Navigation       */
 /* ========================= */
 header {
@@ -93,25 +59,6 @@ nav { position: relative; }
 }
 .nav-links a:hover { text-decoration: underline; }
 .nav-links a.active, .nav-links a[aria-current="page"] { color: var(--color-gold); }
-
-.menu-toggle {
-  display: none; background: none; border: 2px solid var(--color-white);
-  border-radius: 0.375rem; font-size: 1.25rem; color: var(--color-white);
-  padding: 0.25rem 0.5rem; cursor: pointer;
-}
-.menu-toggle:focus-visible { outline: 3px solid var(--color-gold); outline-offset: 2px; }
-
-@media (max-width: 768px) {
-  .menu-toggle { display: block; }
-  .nav-links {
-    display: none; position: absolute; right: 0; top: 100%;
-    background-color: var(--color-dark-blue); padding: 1rem;
-    flex-direction: column; gap: 0.75rem; border-radius: 0.5rem;
-    box-shadow: 0 8px 18px rgba(0, 64, 128, 0.25); z-index: 100;
-  }
-  .nav-links.show { display: flex; }
-  header { padding: 0.75rem 1rem; }
-}
 
 /* ========================= */
 /* Hero Sections             */
@@ -153,168 +100,6 @@ nav { position: relative; }
 }
 
 /* ========================= */
-/* CTA Buttons               */
-/* ========================= */
-.cta-button {
-  position: relative; z-index: 1;
-  display: inline-block;
-  background-color: var(--color-gold);
-  color: var(--color-black);
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-.cta-button:hover {
-  background-color: var(--color-gold-dark);
-  transform: scale(1.05);
-}
-.cta-button:focus-visible {
-  outline: 3px solid var(--color-white);
-  outline-offset: 2px;
-}
-
-/* ========================= */
-/* View Toggle (Grid/List)   */
-/* ========================= */
-.view-toggle {
-  max-width: 1100px;
-  margin: 1rem auto;
-  display: flex; gap: 1rem;
-}
-.view-toggle button {
-  background-color: var(--color-dark-blue);
-  color: var(--color-white);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-.view-toggle button:hover { background-color: var(--color-mid-blue); }
-.view-toggle button[aria-pressed="true"] {
-  background-color: var(--color-gold);
-  color: var(--color-black);
-}
-
-/* ========================= */
-/* Member Directory Layout   */
-/* ========================= */
-#members.grid-view {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-#members.list-view { display: block; }
-#members.list-view .member-card {
-  display: flex;
-  flex-direction: column; /* logo left, info right */
-  align-items: center;
-  gap: 1rem;
-}
-.member-card { transition: transform 0.2s ease; }
-.member-card:hover { transform: translateY(-4px); }
-
-/* ========================= */
-/* Join Page Form            */
-/* ========================= */
-.join-page {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: var(--color-white);
-  border-radius: 8px;
-  border: 1px solid var(--color-gray-light);
-  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.1);
-}
-.join-page h2 { margin-bottom: 0.5rem; }
-.join-page p.intro {
-  color: var(--color-gray-dark);
-  margin-bottom: 1.5rem;
-}
-.join-page form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 500px;
-  margin: 0 auto;
-}
-.join-page label {
-  display: block;
-  font-weight: 600;
-  color: var(--color-dark-blue);
-  margin-bottom: 0.25rem;
-}
-.join-page input,
-.join-page textarea,
-.join-page select {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid var(--color-gray-mid);
-  border-radius: 0.375rem;
-  font-size: 1rem;
-  background-color: var(--color-white);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.join-page input:focus,
-.join-page textarea:focus,
-.join-page select:focus {
-  border-color: var(--color-gold);
-  outline: none;
-  box-shadow: 0 0 0 3px var(--color-gold-focus);
-}
-.join-page button {
-  align-self: flex-start;
-  background-color: var(--color-dark-blue);
-  color: var(--color-white);
-  font-weight: 700;
-  padding: 0.75rem 1.25rem;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-.join-page button:hover {
-  background-color: var(--color-mid-blue);
-  transform: translateY(-1px);
-}
-.join-page button:focus-visible {
-  outline: 3px solid var(--color-gold);
-  outline-offset: 2px;
-}
-
-/* ========================= */
-/* Discover Page: History    */
-/* ========================= */
-.history {
-  background-color: var(--color-white);
-  padding: 2rem;
-  border-radius: 8px;
-  margin: 2rem auto;
-  max-width: 900px;
-  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.1);
-}
-.timeline { display: grid; gap: 1.5rem; }
-.event {
-  border-left: 4px solid var(--color-gold);
-  padding-left: 1rem;
-}
-.event h3 {
-  color: var(--color-mid-blue);
-  margin-bottom: 0.25rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-.event p {
-  margin: 0;
-  color: var(--color-gray-dark);
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-/* ========================= */
 /* Footer                    */
 /* ========================= */
 footer {
@@ -332,22 +117,8 @@ footer::before {
   z-index: 0;
 }
 footer * { position: relative; z-index: 1; }
-footer a { color: var(--color-gold); text-decoration: none; }
+
+/* ✅ Fix: use dark blue for links on light backgrounds */
+footer a { color: var(--color-dark-blue); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 footer address { font-style: normal; }
-
-/* ========================= */
-/* Responsive Tweaks         */
-/* ========================= */
-@media (max-width: 1024px) {
-  .grid-auto { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-}
-@media (max-width: 768px) {
-  .hero, .discover-hero, .join-hero { padding: 4rem 1.25rem; }
-  #members.list-view .member-card { align-items: flex-start; }
-}
-@media (max-width: 600px) {
-  .grid-auto { grid-template-columns: 1fr; }
-  .join-page { margin: 1.5rem auto; padding: 1.5rem; }
-  .join-page form { max-width: 100%; }
-}

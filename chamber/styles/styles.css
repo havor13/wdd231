@@ -2,12 +2,17 @@
 /* Color Variables           */
 /* ========================= */
 :root {
-  --color-dark-blue: #004080;
-  --color-mid-blue: #0047ab;
-  --color-light-blue: #0066cc;
-  --color-gold: #ffcc00;
-  --color-gold-dark: #e6b800;
-  --color-gold-focus: rgba(255, 204, 0, 0.35);
+  /* Brand Colors */
+  --color-dark-blue: #004080;       /* Chamber brand dark blue */
+  --color-mid-blue: #0047ab;        /* Accent blue */
+  --color-light-blue: #0066cc;      /* Lighter accent blue */
+
+  /* Gold Palette (accessible contrast) */
+  --color-gold: #ffcc00;            /* Bright gold */
+  --color-gold-dark: #e6b800;       /* Darker gold for hover/focus */
+  --color-gold-focus: rgba(255, 204, 0, 0.35); /* Focus outline */
+
+  /* Neutral Colors */
   --color-white: #ffffff;
   --color-black: #000000;
   --color-gray-dark: #222222;
@@ -15,9 +20,11 @@
   --color-gray-light: #dddddd;
   --color-bg-light: #f9f9f9;
 
+  /* Status Colors */
   --color-error: #cc0000;
   --color-error-bg: #ffe6e6;
 
+  /* Overlays & Shadows */
   --overlay-dark-blue-70: rgba(0, 64, 128, 0.70);
   --overlay-dark-blue-85: rgba(0, 64, 128, 0.85);
   --shadow-dark-blue: rgba(0, 64, 128, 0.1);
@@ -160,8 +167,8 @@ section.hero > * {
 /* ========================= */
 .cta-button {
   display: inline-block;
-  background-color: var(--color-gold); /* gold base */
-  color: var(--color-dark-blue);  /* dark blue text for contrast */
+  background-color: var(--color-gold); 
+  color: var(--color-dark-blue);  
   padding: 0.75rem 1.25rem;
   border-radius: 0.5rem;
   font-weight: 700;

@@ -59,14 +59,12 @@
   </header>
 
   <main id="main">
-  <!-- Hero -->
-  <section class="hero" aria-label="Welcome hero">
-    <h1>Welcome to the Kumasi Chamber of Commerce — Home</h1>
-    <p>Connecting businesses, culture, and community in Ashanti.</p>
-    <a href="join.html" class="cta-button">Join Us Today</a>
-  </section>
-</main>
-
+    <!-- Hero -->
+    <section class="hero" aria-label="Welcome hero">
+      <h1>Welcome to the Kumasi Chamber of Commerce — Home</h1>
+      <p>Connecting businesses, culture, and community in Ashanti.</p>
+      <a href="join.html" class="cta-button">Join Us Today</a>
+    </section>
 
     <!-- Highlights -->
     <section class="highlights" aria-labelledby="highlights-title">
@@ -87,7 +85,7 @@
       </div>
     </section>
 
-    <!-- Events + Weather -->
+    <!-- Events + Weather + Spotlight -->
     <div class="events-weather-wrapper">
       <section class="events" aria-labelledby="events-title">
         <h2 id="events-title">Current Events</h2>
@@ -98,17 +96,17 @@
         </ul>
       </section>
 
-    <section id="weather" aria-label="Current weather and forecast">
-      <h2>Weather in Kumasi</h2>
-     <div id="weather-current"></div>
-     <div id="weather-forecast" class="grid-auto"></div>
-   </section>
+      <section id="weather" aria-label="Current weather and forecast">
+        <h2>Weather in Kumasi</h2>
+        <div id="weather-current"></div>
+        <div id="weather-forecast" class="grid-auto"></div>
+      </section>
 
-    <section id="spotlight" aria-label="Company spotlight">
-      <h2>Member Spotlight</h2>
-      <div id="spotlight-grid" class="grid-auto"></div>
-    </section>
-
+      <section id="spotlight" aria-label="Company spotlight">
+        <h2>Member Spotlight</h2>
+        <div id="spotlight-grid" class="grid-auto"></div>
+      </section>
+    </div> <!-- ✅ properly closed -->
 
     <!-- CTA -->
     <section class="cta" aria-labelledby="cta-title">
@@ -119,7 +117,7 @@
         <a href="join.html" class="cta-button">Become a Member</a>
       </div>
     </section>
-  </main>
+  </main> <!-- ✅ only one closing main -->
 
   <footer>
     <address>
@@ -129,7 +127,7 @@
     <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-<script src="scripts/main.js" type="module"></script>
-<script src="scripts/app.mjs" type="module"></script>
+  <script src="scripts/main.js" type="module"></script>
+  <script src="scripts/app.mjs" type="module"></script>
 </body>
 </html>

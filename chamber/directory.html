@@ -57,16 +57,16 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main">
     <h1>Member Directory</h1>
 
-    <!-- ✅ Grid/List toggle buttons with corrected IDs -->
+    <!-- Grid/List toggle buttons -->
     <div class="view-toggle">
       <button id="gridBtn" aria-pressed="true">Grid View</button>
       <button id="listBtn" aria-pressed="false">List View</button>
     </div>
 
-    <!-- ✅ Members container starts with grid-view -->
+    <!-- Members container starts with grid-view -->
     <section id="members" class="grid-view">
       <h2 class="visually-hidden">Member Listings</h2>
       <!-- Members populated dynamically by directory.js -->
@@ -79,8 +79,8 @@
     <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="scripts/main.js" defer></script>
-  <script src="scripts/directory.js" defer></script>
+  <!-- External Scripts -->
+  <script src="scripts/main.js" type="module" defer></script>
+  <script src="scripts/directory.js" type="module" defer></script>
 </body>
 </html>

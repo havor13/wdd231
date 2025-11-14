@@ -58,7 +58,7 @@
     </nav>
   </header>
 
-  <main id="main" role="main">
+  <main id="main">
     <!-- Hero -->
     <section class="hero" aria-label="Welcome hero">
       <h1>Welcome to the Kumasi Chamber of Commerce — Home</h1>
@@ -128,35 +128,8 @@
     <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <!-- Script to populate year and last modified -->
-  <script>
-    (function () {
-      const yearEl = document.getElementById('year');
-      const lastModEl = document.getElementById('lastModified');
-
-      if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-      }
-
-      if (lastModEl) {
-        const raw = document.lastModified;
-        const parsed = new Date(raw);
-        const isValid = !isNaN(parsed.valueOf());
-
-        const formatter = new Intl.DateTimeFormat('en-GB', {
-          day: '2-digit',
-          month: 'short',
-          year: 'numeric',
-          hour: '2-digit',
-          minute: '2-digit'
-        });
-
-        lastModEl.textContent = isValid ? formatter.format(parsed) : raw;
-      }
-    })();
-  </script>
-
-  <!-- Module script -->
-  <script type="module" src="scripts/app.mjs"></script>
+  <!-- External Scripts -->
+  <script src="scripts/main.js" type="module" defer></script>
+  <script src="scripts/app.mjs" type="module" defer></script>
 </body>
 </html>

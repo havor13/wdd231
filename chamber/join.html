@@ -41,6 +41,9 @@
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
   <!-- Header -->
   <header>
     <div class="logo">
@@ -59,7 +62,7 @@
   </header>
 
   <!-- Main Content -->
-  <main>
+  <main id="main">
     <!-- Hero Banner -->
     <section class="join-hero">
       <h1>Join the Kumasi Chamber</h1>
@@ -71,7 +74,7 @@
       <h2>Membership Application</h2>
       <p class="intro">Fill out the form below to get started.</p>
 
-      <form>
+      <form id="joinForm" novalidate>
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" required>
 
@@ -107,7 +110,7 @@
     <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="scripts/main.js" defer></script>
+  <!-- External Scripts -->
+  <script src="scripts/main.js" type="module" defer></script>
 </body>
 </html>

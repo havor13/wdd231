@@ -323,4 +323,5 @@ footer a {
 
 footer a:hover {
   color: var(--color-gold); /* gold is safe on dark blue */
+  text-decoration: underline;
 }

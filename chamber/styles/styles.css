@@ -132,7 +132,8 @@ nav { position: relative; }
 }
 
 /* ========================= */
-/* Hero Section (No !important) */
+/* Hero Section              */
+/* ========================= */
 section.hero {
   position: relative;
   background-color: var(--color-dark-blue);
@@ -155,46 +156,38 @@ section.hero > * {
 }
 
 /* ========================= */
-/* CTA Buttons (dark blue)   */
+/* CTA Buttons               */
 /* ========================= */
 .cta-button {
-  position: relative;
-  z-index: 1;
   display: inline-block;
-  background-color: var(--color-dark-blue); /* dark blue base */
-  color: var(--color-white);                /* white text */
+  background-color: var(--color-gold); /* gold base */
+  color: var(--color-dark-blue);  /* dark blue text for contrast */
   padding: 0.75rem 1.25rem;
   border-radius: 0.5rem;
   font-weight: 700;
+  font-size: 1rem;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.hero-cta {
   text-align: center;
-  margin: 2rem 0; /* space above and below */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px var(--shadow-dark-blue);
 }
-
 .cta-button:hover {
-  background-color: var(--color-mid-blue);  /* lighter blue on hover */
+  background-color: var(--color-gold-dark); /* darker gold on hover */
   transform: scale(1.05);
 }
-
 .cta-button:focus-visible {
-  outline: 3px solid var(--color-gold);     
-  outline-offset: 2px;
+  outline: 3px solid var(--color-dark-blue); /* strong focus ring */
+  outline-offset: 3px;
 }
-
-.join-btn, .directory-btn, .member-btn {
-  background-color: var(--color-dark-blue);
-  color: var(--color-white);
-}
-.join-btn:hover, .directory-btn:hover, .member-btn:hover {
-  background-color: var(--color-mid-blue);
-}
+.hero .cta-button {
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1; /* ensures it sits above overlay */
+ }
 
 /* ========================= */
 /* Member Directory Layout   */
+/* ========================= */
 #members.grid-view {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -212,6 +205,7 @@ section.hero > * {
 
 /* ========================= */
 /* Join Page Form            */
+/* ========================= */
 .join-page {
   max-width: 800px;
   margin: 2rem auto;
@@ -284,6 +278,7 @@ section.hero > * {
 
 /* ========================= */
 /* Discover Page: History    */
+/* ========================= */
 .history {
   background-color: var(--color-white);
   padding: 2rem;
@@ -298,30 +293,112 @@ section.hero > * {
 /* ========================= */
 footer {
   position: relative;
-  background-color: var(--color-dark-blue); /* solid dark blue background */
-  color: var(--color-white); /* ensures all text is white */
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
 }
-
 footer * {
   position: relative;
   z-index: 1;
 }
-
 footer p,
 footer address {
   color: var(--color-white);
 }
 
-/* ✅ Consolidated link styles */
+/* Consolidated link styles */
 footer a {
-  color: var(--color-white); 
+  color: var(--color-white);
   text-decoration: none;
 }
-
 footer a:hover {
-  color: var(--color-gold); /* gold is safe on dark blue */
+  color: var(--color-gold);
   text-decoration: underline;
+}
+
+/* ========================= */
+/* Weather Section           */
+/* ========================= */
+#weather {
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: 0 4px 12px var(--shadow-dark-blue);
+}
+
+#weather h2 {
+  color: var(--color-dark-blue);
+  margin-bottom: 1rem;
+}
+
+#weather-current {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+#weather-current img {
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+}
+
+#weather-forecast {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+#weather-forecast .card {
+  background-color: var(--color-light-blue);
+  color: var(--color-white);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px var(--shadow-dark-blue);
+}
+
+#weather-forecast .card img {
+  width: 50px;
+  height: 50px;
+  margin-top: 0.5rem;
+}
+
+/* ========================= */
+/* Spotlight Section         */
+/* ========================= */
+#spotlight {
+  background-color: var(--color-bg-light);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: 0 4px 12px var(--shadow-dark-blue);
+}
+
+#spotlight h2 {
+  color: var(--color-dark-blue);
+  margin-bottom: 1rem;
+}
+
+.spotlight-card {
+  background-color: var(--color-gold);
+  color: var(--color-dark-blue);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px var(--shadow-dark-blue);
+  transition: transform 0.2s ease;
+}
+
+.spotlight-card:hover {
+  transform: translateY(-4px);
+}
+
+.spotlight-card img {
+  max-width: 100px;
+  margin-bottom: 0.5rem;
 }

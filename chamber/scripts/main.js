@@ -1,36 +1,47 @@
 // scripts/main.js
 
-// ✅ Footer year and last modified
-const yearEl = document.getElementById("year");
-const lastModEl = document.getElementById("lastModified");
+import { renderWeather } from './weather.js';
+import { renderSpotlights } from './spotlight.js';
 
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
+document.addEventListener("DOMContentLoaded", () => {
+  // ✅ Footer year and last modified
+  const yearEl = document.getElementById("year");
+  const lastModEl = document.getElementById("lastModified");
 
-if (lastModEl) {
-  const raw = document.lastModified;
-  const parsed = new Date(raw);
-  const isValid = !isNaN(parsed.valueOf());
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 
-  const formatter = new Intl.DateTimeFormat("en-GB", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit"
-  });
+  if (lastModEl) {
+    const raw = document.lastModified;
+    const parsed = new Date(raw);
+    const isValid = !isNaN(parsed.valueOf());
 
-  lastModEl.textContent = isValid ? formatter.format(parsed) : raw;
-}
+    const formatter = new Intl.DateTimeFormat("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit"
+    });
 
-// ✅ Mobile menu toggle
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+    lastModEl.textContent = isValid ? formatter.format(parsed) : raw;
+  }
 
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    const isExpanded = navLinks.classList.toggle("show");
-    menuToggle.setAttribute("aria-expanded", isExpanded ? "true" : "false");
-  });
-}
+  // ✅ Mobile menu toggle
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      const isExpanded = navLinks.classList.toggle("show");
+      menuToggle.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+    });
+  }
+
+  // ✅ Weather API integration (Criterion #11)
+  renderWeather({ city: "Kumasi", countryCode: "GH", units: "metric" });
+
+  // ✅ Company Spotlight integration (Criterion #12)
+  renderSpotlights();
+});

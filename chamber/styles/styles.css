@@ -299,21 +299,33 @@ section.hero > * {
   box-shadow: 0 4px 12px var(--shadow-dark-blue);
 }
 
-/* ========================= */ 
-/*         Footer            */ 
-/* ========================= */ 
-footer { 
-  position: relative; 
-  background: url("images/hero-bg.jpg") center/cover no-repeat; 
-  color: var(--color-white); 
-  text-align: center; 
-  padding: 1rem; 
-  margin-top: 2rem; 
-} footer::before { content: "";
-   position: absolute; 
-   inset: 0; background: rgba(0, 64, 128, 0.7); z-index: 0;
-   } footer * { position: relative; z-index: 1;
-   } footer a { color: var(--color-gold); 
-    text-decoration: none;
-   } footer a:hover { text-decoration: underline; 
-  } footer address { font-style: normal; }
+/* ========================= */
+/* Footer (dark blue background) */
+/* ========================= */
+footer {
+  position: relative;
+  background-color: var(--color-dark-blue); /* solid dark blue background */
+  color: var(--color-white);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ✅ use white or dark blue links for contrast */
+footer a {
+  color: var(--color-white); /* strong contrast on dark blue */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer address {
+  font-style: normal;
+}

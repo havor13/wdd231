@@ -134,49 +134,31 @@ nav { position: relative; }
 }
 
 /* ========================= */
-/* Hero Sections (contrast fixed) */
+/* FINAL HERO CONTRAST FIX   */
 /* ========================= */
 
-.hero,
-.discover-hero,
-.join-hero {
-  position: relative;
-  text-align: center;
-  padding: 5rem 2rem;
-  color: var(--color-white);
-
-  /* ✅ NEW: fallback background ensures contrast even if image fails */
-  background-color: var(--color-dark-blue);
+section.hero {
+  position: relative !important;
+  background-color: var(--color-dark-blue) !important;
+  background-image: url("images/hero-bg.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  color: var(--color-white) !important;
 }
 
-/* Hero background images */
-.hero {
-  background-image: url("images/hero-bg.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.discover-hero {
-  background-image: url("images/hero-bg.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.join-hero {
-  background-image: url("images/hero-bg.jpg");
-  background-size: cover;
-  background-position: center;
+section.hero::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(0, 64, 128, 0.85) !important;
+  z-index: 0 !important;
 }
 
-/* Overlay (unchanged, still needed) */
-.hero::before,
-.discover-hero::before,
-.join-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--overlay-dark-blue-85);
-  z-index: 0;
+section.hero > * {
+  position: relative !important;
+  z-index: 1 !important;
+  color: var(--color-white) !important;
 }
-
 
 /* ========================= */
 /* CTA Buttons               */

@@ -319,7 +319,7 @@ nav { position: relative; }
 /* ========================= */
 footer {
   position: relative;
-  background: url("images/footer-bg.jpg") center/cover no-repeat;
+  background: url("images/hero-bg.jpg") center/cover no-repeat;
   color: var(--color-white);
   text-align: center;
   padding: 1rem;

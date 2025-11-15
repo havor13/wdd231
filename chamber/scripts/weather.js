@@ -1,4 +1,4 @@
-const API_KEY = 'YOUR_OPENWEATHERMAP_API_KEY';
+const API_KEY = 'a739d8a84111517b1234a6c7a1013e28';
 
 function dayNameFrom(dt) {
   return new Date(dt * 1000).toLocaleDateString("en-GB", { weekday: 'short' });

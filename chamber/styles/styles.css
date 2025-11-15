@@ -144,11 +144,12 @@ nav { position: relative; }
 section.hero {
   position: relative;
   background-color: var(--color-dark-blue);
-  background-image: url("images/hero-bg.jpg");
+  background-image: url("../images/hero-bg.jpg");
   background-size: cover;
   background-position: center;
   color: var(--color-white);
 }
+
 section.hero::before {
   content: "";
   position: absolute;

@@ -108,7 +108,7 @@ nav { position: relative; }
 }
 .nav-links a:hover { text-decoration: underline; }
 .nav-links a.active,
-.nav-links a[aria-current="page"] { color: var(--color-gold); }
+.nav-links a[aria-current="page"] { color: var(--color-gold-dark); }
 
 .menu-toggle {
   display: none; background: none;
@@ -138,60 +138,48 @@ nav { position: relative; }
   header { padding: 0.75rem 1rem; }
 }
 
-/* ========================= */
-/* Hero Section              */
-/* ========================= */
-section.hero {
-  position: relative;
-  background-color: var(--color-dark-blue);
-  background-image: url("images/hero-bg.jpg");
+.hero {
+  background-image: url("images/kumasi-hero.webp");/* Update with your actual image filename */
   background-size: cover;
   background-position: center;
-  color: var(--color-white);
-}
-
-section.hero::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: var(--overlay-dark-blue-85);
-  z-index: 0;
-}
-section.hero > * {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
   position: relative;
-  z-index: 1;
-  color: var(--color-white);
 }
 
-/* ========================= */
-/* CTA Buttons               */
-/* ========================= */
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Improves contrast */
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.hero-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
 .cta-button {
   display: inline-block;
-  background-color: var(--color-gold); 
-  color: var(--color-dark-blue);  
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  font-weight: 700;
-  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #e69500;
+  color: #fff;
   text-decoration: none;
-  text-align: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 10px var(--shadow-dark-blue);
+  border-radius: 5px;
+  font-weight: bold;
 }
+
 .cta-button:hover {
-  background-color: var(--color-gold-dark); /* darker gold on hover */
-  transform: scale(1.05);
+  background-color: #d35400;
 }
-.cta-button:focus-visible {
-  outline: 3px solid var(--color-dark-blue); /* strong focus ring */
-  outline-offset: 3px;
-}
-.hero .cta-button {
-  margin-top: 1rem;
-  position: relative;
-  z-index: 1; /* ensures it sits above overlay */
- }
 
 /* ========================= */
 /* Member Directory Layout   */
@@ -393,8 +381,8 @@ footer a:hover {
 }
 
 .spotlight-card {
-  background-color: var(--color-gold);
-  color: var(--color-dark-blue);
+  background-color: var(--color-gold);  /* #ffcc00 */
+  color: var(--color-dark-blue); /* #004080 */
   padding: 1rem;
   border-radius: 8px;
   text-align: center;

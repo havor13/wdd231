@@ -138,8 +138,11 @@ nav { position: relative; }
   header { padding: 0.75rem 1rem; }
 }
 
+/* ========================= */
+/* Hero Section              */
+/* ========================= */
 .hero {
-  background-image: url("images/hero.webp");/* Update with your actual image filename */
+  background-image: url("images/hero.webp"); /* Update with your actual image filename */
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -147,12 +150,12 @@ nav { position: relative; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  color: var(--color-white);   /* replaced #fff */
   position: relative;
 }
 
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* Improves contrast */
+  background-color: var(--overlay-dark-blue-70); /* replaced rgba(0,0,0,0.5) */
   padding: 2rem;
   border-radius: 8px;
 }
@@ -167,18 +170,51 @@ nav { position: relative; }
   margin-bottom: 1rem;
 }
 
+/* ========================= */
+/* CTA Button                */
+/* ========================= */
 .cta-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: #e69500;
-  color: #fff;
+  background-color: var(--color-gold-dark); /* replaced #e69500 */
+  color: var(--color-white);                /* replaced #fff */
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
 }
 
 .cta-button:hover {
-  background-color: #d35400;
+  background-color: var(--color-gold); /* replaced #d35400 */
+}
+
+/* ========================= */
+/* Footer (dark blue background) */
+/* ========================= */
+footer {
+  position: relative;
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+footer * {
+  position: relative;
+  z-index: 1;
+}
+footer p,
+footer address {
+  color: var(--color-white);
+}
+
+/* Consolidated link styles */
+footer a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+footer a:hover {
+  color: var(--color-gold);
+  text-decoration: underline;
 }
 
 /* ========================= */
@@ -285,36 +321,6 @@ nav { position: relative; }
 }
 
 /* ========================= */
-/* Footer (dark blue background) */
-/* ========================= */
-footer {
-  position: relative;
-  background-color: var(--color-dark-blue);
-  color: var(--color-white);
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-}
-footer * {
-  position: relative;
-  z-index: 1;
-}
-footer p,
-footer address {
-  color: var(--color-white);
-}
-
-/* Consolidated link styles */
-footer a {
-  color: var(--color-white);
-  text-decoration: none;
-}
-footer a:hover {
-  color: var(--color-gold);
-  text-decoration: underline;
-}
-
-/* ========================= */
 /* Weather Section           */
 /* ========================= */
 #weather {
@@ -381,8 +387,8 @@ footer a:hover {
 }
 
 .spotlight-card {
-  background-color: var(--color-gold);  /* #ffcc00 */
-  color: var(--color-dark-blue); /* #004080 */
+  background-color: var(--color-gold);
+  color: var(--color-dark-blue);
   padding: 1rem;
   border-radius: 8px;
   text-align: center;

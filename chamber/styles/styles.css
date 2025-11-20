@@ -142,7 +142,7 @@ nav { position: relative; }
 /* Hero Section              */
 /* ========================= */
 .hero {
-  background-image: url("images/hero.webp"); 
+  background-image: url("images/hero.webp"); /* Update with your actual image filename */
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -150,7 +150,6 @@ nav { position: relative; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: var(--color-dark-blue);
   color: var(--color-white);   
   position: relative;
 }
@@ -164,59 +163,29 @@ nav { position: relative; }
 .hero-overlay h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: var(--color-white);   
+  color: var(--color-white);
 }
 
 .hero-overlay p {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: var(--color-white);  
-}
-
-.hero-overlay a {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--color-gold-dark); 
-  color: var(--color-dark-blue);            
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.hero-overlay a:hover {
-  background-color: var(--color-gold);      
-  transform: translateY(-2px);
 }
 
 /* ========================= */
-/* Global CTA Button Styles  */
+/* CTA Button                */
 /* ========================= */
-.cta-button,
-button.cta,
-a.cta {
+.cta-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: var(--color-gold-dark); /* accessible gold background */
-  color: var(--color-dark-blue);            /* dark text for contrast */
+  background-color: var(--color-gold-dark); /* replaced #e69500 */
+  color: var(--color-white);                /* replaced #fff */
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.cta-button:hover,
-button.cta:hover,
-a.cta:hover {
-  background-color: var(--color-gold);      /* brighter gold on hover */
-  transform: translateY(-2px);
-}
-
-.cta-button:focus-visible,
-button.cta:focus-visible,
-a.cta:focus-visible {
-  outline: 3px solid var(--color-dark-blue);
-  outline-offset: 2px;
+.cta-button:hover {
+  background-color: var(--color-gold)
 }
 
 /* ========================= */

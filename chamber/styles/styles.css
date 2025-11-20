@@ -142,7 +142,7 @@ nav { position: relative; }
 /* Hero Section              */
 /* ========================= */
 .hero {
-  background-image: url("images/hero.webp"); /* Update with your actual image filename */
+  background-image: url("images/hero.webp"); 
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -150,12 +150,12 @@ nav { position: relative; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: var(--color-blue);   /* instead of white*/
+  color: var(--color-blue);  
   position: relative;
 }
 
 .hero-overlay {
-  background-color: var(--overlay-dark-blue-70); /* replaced rgba(0,0,0,0.5) */
+  background-color: var(--overlay-dark-blue-70); 
   padding: 2rem;
   border-radius: 8px;
 }
@@ -163,12 +163,17 @@ nav { position: relative; }
 .hero-overlay h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: var(--color-white); /* ensures strong contrast */
+  color: var(--color-white); 
 }
 
 .hero-overlay p {
   font-size: 1.2rem;
   margin-bottom: 1rem;
+  color: var(--color-white);
+}
+
+.hero-overlay a {
+  color: var(--color-white);
 }
 
 /* ========================= */
@@ -185,7 +190,7 @@ nav { position: relative; }
 }
 
 .cta-button:hover {
-  background-color: var(--color-gold); /* replaced #d35400 */
+  background-color: var(--color-gold); 
 }
 
 /* ========================= */

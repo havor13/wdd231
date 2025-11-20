@@ -150,6 +150,7 @@ nav { position: relative; }
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-color: var(--color-dark-blue);
   color: var(--color-white);   
   position: relative;
 }

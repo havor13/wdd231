@@ -139,7 +139,7 @@ nav { position: relative; }
 }
 
 .hero {
-  background-image: url("images/kumasi-hero.webp");/* Update with your actual image filename */
+  background-image: url("images/hero.webp");/* Update with your actual image filename */
   background-size: cover;
   background-position: center;
   height: 80vh;

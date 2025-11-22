@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Kumasi Chamber | Thank You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html" class="logo">Kumasi Chamber</a>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+        <img src="images/thankyou-hero.webp" alt="Thank you for joining the Chamber">
+      </div>
+      <div class="hero-text">
+        <h1>Thank You</h1>
+        <p>Your application has been received.</p>
+      </div>
+    </section>
+
+    <section class="thankyou card">
+      <h2>Submission details</h2>
+      <div class="grid">
+        <p><strong>First name:</strong> <span id="out-firstName">—</span></p>
+        <p><strong>Last name:</strong> <span id="out-lastName">—</span></p>
+        <p><strong>Email:</strong> <span id="out-email">—</span></p>
+        <p><strong>Mobile:</strong> <span id="out-phone">—</span></p>
+        <p><strong>Organization:</strong> <span id="out-organization">—</span></p>
+        <p><strong>Membership level:</strong> <span id="out-membership">—</span></p>
+        <p><strong>Date loaded:</strong> <span id="out-timestamp">—</span></p>
+      </div>
+      <p>We’ll contact you shortly with next steps.</p>
+      <p><a class="info-button" href="index.html">Return to home</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Kumasi Chamber of Commerce</p>
+  </footer>
+
+  <script>
+    // Read query params from GET submission
+    const params = new URLSearchParams(window.location.search);
+    const fields = ["firstName","lastName","email","phone","organization","membership","timestamp"];
+    fields.forEach(f => {
+      const el = document.getElementById(`out-${f}`);
+      if (el) el.textContent = params.get(f) || "—";
+    });
+  </script>
+</body>
+</html>

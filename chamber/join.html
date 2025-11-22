@@ -74,31 +74,120 @@
       <h2>Membership Application</h2>
       <p class="intro">Fill out the form below to get started.</p>
 
-      <form id="joinForm" novalidate>
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required>
+      <form id="joinForm" method="get" action="thankyou.html" novalidate>
+        <!-- Hidden timestamp -->
+        <input type="hidden" id="timestamp" name="timestamp" title="Form load timestamp">
 
-        <label for="business">Business Name</label>
-        <input type="text" id="business" name="business" required>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" autocomplete="family-name" required>
+
+        <label for="title">Organizational Title</label>
+        <input type="text" id="title" name="title" autocomplete="organization-title"
+               pattern="[A-Za-z\\- ]{7,}" title="At least 7 characters, letters, hyphens, spaces only" required>
 
         <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="example@domain.com" required>
 
-        <label for="membership">Membership Level</label>
-        <select id="membership" name="membership" required>
-          <option value="">Select a level</option>
-          <option value="bronze">Bronze</option>
-          <option value="silver">Silver</option>
-          <option value="gold">Gold</option>
-          <option value="platinum">Platinum</option>
-        </select>
+        <label for="phone">Mobile Phone</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" required>
 
-        <label for="message">Tell us about your business</label>
-        <textarea id="message" name="message" rows="4"></textarea>
+        <label for="organization">Business/Organization Name</label>
+        <input type="text" id="organization" name="organization" autocomplete="organization" required>
+
+        <fieldset>
+          <legend>Membership Level</legend>
+          <label><input type="radio" name="membership" value="np" required> NP Membership (no fee)</label>
+          <label><input type="radio" name="membership" value="bronze"> Bronze</label>
+          <label><input type="radio" name="membership" value="silver"> Silver</label>
+          <label><input type="radio" name="membership" value="gold"> Gold</label>
+        </fieldset>
+
+        <label for="description">Business/Organization Description</label>
+        <textarea id="description" name="description" rows="4"></textarea>
 
         <button type="submit">Join Now</button>
       </form>
     </section>
+
+    <!-- Membership Cards -->
+    <aside class="membership-cards">
+      <article class="membership-card" id="card-np">
+        <h3>NP Membership</h3>
+        <p>No fee • For registered non-profits</p>
+        <button class="info-button" data-modal="modal-np">View benefits</button>
+      </article>
+      <article class="membership-card" id="card-bronze">
+        <h3>Bronze</h3>
+        <p>Entry level • Essential visibility</p>
+        <button class="info-button" data-modal="modal-bronze">View benefits</button>
+      </article>
+      <article class="membership-card" id="card-silver">
+        <h3>Silver</h3>
+        <p>Growth tier • Added promotions</p>
+        <button class="info-button" data-modal="modal-silver">View benefits</button>
+      </article>
+      <article class="membership-card" id="card-gold">
+        <h3>Gold</h3>
+        <p>Premium • Spotlight and training</p>
+        <button class="info-button" data-modal="modal-gold">View benefits</button>
+      </article>
+    </aside>
+
+    <!-- Modals -->
+    <div class="modal" id="modal-np" hidden>
+      <div class="modal__content">
+        <h2>NP Membership Benefits</h2>
+        <ul>
+          <li>Directory listing</li>
+          <li>Community events access</li>
+          <li>Advocacy support</li>
+        </ul>
+        <button class="modal__close" data-close>Close</button>
+      </div>
+    </div>
+    <div class="modal" id="modal-bronze" hidden>
+      <div class="modal__content">
+        <h2>Bronze Benefits</h2>
+        <ul>
+          <li>Directory listing + logo</li>
+          <li>Networking invites</li>
+          <li>Event discounts</li>
+        </ul>
+        <button class="modal__close" data-close>Close</button>
+      </div>
+    </div>
+    <div class="modal" id="modal-silver" hidden>
+      <div class="modal__content">
+        <h2>Silver Benefits</h2>
+        <ul>
+          <li>Homepage spotlight</li>
+          <li>Training vouchers</li>
+          <li>Co-branded promotions</li>
+        </ul>
+        <button class="modal__close" data-close>Close</button>
+      </div>
+    </div>
+    <div class="modal" id="modal-gold" hidden>
+      <div class="modal__content">
+        <h2>Gold Benefits</h2>
+        <ul>
+          <li>Priority spotlight placement</li>
+          <li>Exclusive sponsorship opportunities</li>
+          <li>Advanced training
+               <div class="modal" id="modal-gold" hidden>
+      <div class="modal__content">
+        <h2>Gold Benefits</h2>
+        <ul>
+          <li>Priority spotlight placement</li>
+          <li>Exclusive sponsorship opportunities</li>
+          <li>Advanced training and mentorship</li>
+        </ul>
+        <button class="modal__close" data-close>Close</button>
+      </div>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -112,5 +201,13 @@
 
   <!-- External Scripts -->
   <script src="scripts/main.js" type="module"></script>
+  <script>
+    // Set timestamp on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const ts = document.getElementById('timestamp');
+      if (ts) ts.value = new Date().toISOString();
+    });
+  </script>
 </body>
 </html>
+ 

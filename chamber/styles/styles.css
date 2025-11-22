@@ -232,20 +232,45 @@ footer a:hover {
 /* ========================= */
 /* Member Directory Layout   */
 /* ========================= */
-#members.grid-view {
+.membership-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
 }
-#members.list-view { display: block; }
-#members.list-view .member-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+
+.membership-card {
+  background-color: var(--color-white);
+  border-left: 6px solid var(--color-gold);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.1);
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
 }
-.member-card { transition: transform 0.2s ease; }
-.member-card:hover { transform: translateY(-4px); }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-button {
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.info-button:hover {
+  background-color: var(--color-mid-blue);
+}
+
 
 /* ========================= */
 /* Join Page Form            */
@@ -318,6 +343,73 @@ footer a:hover {
 .join-page select.error {
   border-color: var(--color-error);
   background-color: var(--color-error-bg);
+}
+
+input[type="hidden"] {
+  display: none;
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 64, 128, 0.85);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.modal__content {
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  box-shadow: 0 8px 24px rgba(0, 64, 128, 0.25);
+}
+
+.modal__close {
+  margin-top: 1rem;
+  background-color: var(--color-gold-dark);
+  color: var(--color-white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.thankyou {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.1);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.thankyou h2 {
+  margin-bottom: 1rem;
+  color: var(--color-dark-blue);
+}
+
+.thankyou .grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.thankyou p {
+  font-weight: 500;
+}
+
+.thankyou img {
+  max-width: 300px;
+  margin: 1rem auto;
+  display: block;
 }
 
 /* ========================= */

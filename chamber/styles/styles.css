@@ -138,6 +138,7 @@ nav { position: relative; }
   header { padding: 0.75rem 1rem; }
 }
 
+/* Hero Section */
 .hero-image {
   width: 100%;
   height: auto;
@@ -150,40 +151,50 @@ nav { position: relative; }
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(184, 134, 11, 0.4);
+  background: var(--overlay-dark-blue-70); /* Accessible dark blue overlay */
   z-index: 1;
 }
 
 .hero-text {
   text-align: center;
-  color: #ffffff;
+  color: var(--color-white); /* White text */
   position: relative;
   z-index: 2;
   font-size: 2rem;
   font-weight: 700;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+  text-shadow: 2px 2px 6px var(--shadow-dark-blue-strong); /* Shadow for contrast */
   margin-top: 1rem;
-  border-bottom: 2px solid #ffd700;
+  border-bottom: 2px solid var(--color-gold); /* Golden underline accent */
   display: inline-block;
 }
 
+/* Active Link */
+a.active {
+  color: var(--color-gold);             /* Bright gold for visibility */
+  background-color: var(--color-dark-blue); /* Chamber brand dark blue */
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Call-to-Action Button */
 .cta-button {
-  background-color: #b8860b;
+  background-color: var(--color-gold-dark); /* Darker gold */
   color: var(--color-white);
   padding: 12px 24px;
   text-decoration: none;
   font-weight: bold;
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px var(--shadow-dark-blue);
   transition: all 0.3s ease;
   margin-top: 1.5rem;
   display: inline-block;
 }
 
 .cta-button:hover {
-  background-color: #ffd700;
-  color: #1a1a1a;
-  box-shadow: 0 4px 12px rgba(184,134,11,0.6);
+  background-color: var(--color-gold);      /* Bright gold hover */
+  color: var(--color-black);                /* Dark text for contrast */
+  box-shadow: 0 4px 12px var(--shadow-dark-blue-strong);
   transform: scale(1.05);
 }
 

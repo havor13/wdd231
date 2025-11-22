@@ -45,3 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // ✅ Company Spotlight integration (Criterion #12)
   renderSpotlights();
 });
+
+    // Set timestamp on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const ts = document.getElementById('timestamp');
+      if (ts) ts.value = new Date().toISOString();
+    });

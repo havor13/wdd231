@@ -100,9 +100,11 @@
        <input type="tel" id="phone" name="phone" autocomplete="tel" 
        required title="Enter your mobile phone number">
 
-       <label for="organization">Business/Organization Name</label>
-       <input type="text" id="organization" name="organization" autocomplete="organization" 
-       required title="Enter your business or organization name">
+       <label for="title">Organizational Title</label> 
+       <input type="text" id="title" name="title" 
+       autocomplete="organization-title" 
+            pattern="[A-Za-z\\- ]{7,}" title="At least 7 
+      characters, letters, hyphens, spaces only" required>
 
                 <fieldset>
           <legend>Membership Level</legend>
@@ -201,13 +203,6 @@
 
   <!-- External Scripts -->
   <script src="scripts/main.js" type="module"></script>
-  <script>
-    // Set timestamp on load
-    document.addEventListener('DOMContentLoaded', () => {
-      const ts = document.getElementById('timestamp');
-      if (ts) ts.value = new Date().toISOString();
-    });
-  </script>
 </body>
 </html>
  

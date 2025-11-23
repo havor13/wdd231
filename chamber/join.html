@@ -91,6 +91,13 @@
                autocomplete="organization"
                required title="Enter your organization name">
 
+        <label for="orgTitle">Organization Title</label>
+        <input type="text" id="orgTitle" name="orgTitle"
+              autocomplete="organization-title"
+             required 
+             title="Enter your role or position in the organization">
+       
+
         <label for="email">Email Address</label>
         <input type="email" id="email" name="email" autocomplete="email" 
                placeholder="example@domain.com" required 
@@ -142,7 +149,7 @@
     </aside>
 
     <!-- Modals -->
-    <div class="modal" id="modal-np" hidden aria-modal="true">
+    <div class="modal" id="modal-np" hidden>
       <div class="modal__content">
         <h2>NP Membership Benefits</h2>
         <ul>
@@ -153,7 +160,7 @@
         <button class="modal__close" data-close>Close</button>
       </div>
     </div>
-    <div class="modal" id="modal-bronze" hidden aria-modal="true">
+    <div class="modal" id="modal-bronze" hidden>
       <div class="modal__content">
         <h2>Bronze Benefits</h2>
         <ul>
@@ -164,7 +171,7 @@
         <button class="modal__close" data-close>Close</button>
       </div>
     </div>
-    <div class="modal" id="modal-silver" hidden aria-modal="true">
+    <div class="modal" id="modal-silver" hidden>
       <div class="modal__content">
         <h2>Silver Benefits</h2>
         <ul>

@@ -78,44 +78,44 @@
         <!-- Hidden timestamp -->
         <input type="hidden" id="timestamp" name="timestamp" title="Form load timestamp">
 
-       <label for="firstName">First Name</label>
-       <input type="text" id="firstName" name="firstName" autocomplete="given-name" 
-         required title="Enter your first name">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" autocomplete="given-name" 
+               required title="Enter your first name">
 
-       <label for="lastName">Last Name</label>
-       <input type="text" id="lastName" name="lastName" autocomplete="family-name" 
-         required title="Enter your last name">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" autocomplete="family-name" 
+               required title="Enter your last name">
 
-       <label for="organization">Organization Name</label>
-       <input type="text" id="organization" name="organization"
-         autocomplete="organization"
-         required title="Enter your organization name">
+        <label for="organization">Organization Name</label>
+        <input type="text" id="organization" name="organization"
+               autocomplete="organization"
+               required title="Enter your organization name">
 
-       <label for="email">Email Address</label>
-       <input type="email" id="email" name="email" autocomplete="email" 
-         placeholder="example@domain.com" required 
-         title="Enter a valid email address">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" autocomplete="email" 
+               placeholder="example@domain.com" required 
+               title="Enter a valid email address">
 
-       <label for="phone">Mobile Phone</label>
-       <input type="tel" id="phone" name="phone" autocomplete="tel" 
-         required title="Enter your mobile phone number">
+        <label for="phone">Mobile Phone</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" 
+               required title="Enter your mobile phone number">
 
-       <fieldset>
-         <legend>Membership Level</legend>
-         <label><input type="radio" name="membership" value="np" required> NP Membership (no fee)</label>
-         <label><input type="radio" name="membership" value="bronze"> Bronze</label>
-         <label><input type="radio" name="membership" value="silver"> Silver</label>
-         <label><input type="radio" name="membership" value="gold"> Gold</label>
-       </fieldset>
+        <fieldset>
+          <legend>Membership Level</legend>
+          <label><input type="radio" name="membership" value="np" required> NP Membership (no fee)</label>
+          <label><input type="radio" name="membership" value="bronze"> Bronze</label>
+          <label><input type="radio" name="membership" value="silver"> Silver</label>
+          <label><input type="radio" name="membership" value="gold"> Gold</label>
+        </fieldset>
 
-       <label for="orgDescription">Organization Description</label>
-       <textarea id="orgDescription" name="orgDescription"
-            title="Describe your organization"
-            rows="5" required></textarea>
+        <label for="orgDescription">Organization Description</label>
+        <textarea id="orgDescription" name="orgDescription"
+                  title="Describe your organization"
+                  rows="5" required></textarea>
 
-       <button type="submit">Join Now</button>
+        <button type="submit">Join Now</button>
       </form>
-
+    </section>
 
     <!-- Membership Cards -->
     <aside class="membership-cards">
@@ -142,7 +142,7 @@
     </aside>
 
     <!-- Modals -->
-    <div class="modal" id="modal-np" hidden>
+    <div class="modal" id="modal-np" hidden aria-modal="true">
       <div class="modal__content">
         <h2>NP Membership Benefits</h2>
         <ul>
@@ -153,7 +153,7 @@
         <button class="modal__close" data-close>Close</button>
       </div>
     </div>
-    <div class="modal" id="modal-bronze" hidden>
+    <div class="modal" id="modal-bronze" hidden aria-modal="true">
       <div class="modal__content">
         <h2>Bronze Benefits</h2>
         <ul>
@@ -164,7 +164,7 @@
         <button class="modal__close" data-close>Close</button>
       </div>
     </div>
-    <div class="modal" id="modal-silver" hidden>
+    <div class="modal" id="modal-silver" hidden aria-modal="true">
       <div class="modal__content">
         <h2>Silver Benefits</h2>
         <ul>

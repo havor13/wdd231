@@ -8,9 +8,9 @@
 </head>
 <body>
   <header>
-    <h1>Ghanaian E‑Learning Resource Hub — Site Plan</h>
+    <h1>Ghanaian E‑Learning Resource Hub — Site Plan</h1>
     <p>Author: Sampson Havor • Last Updated: November 27, 2025</p>
-</header>
+  </header>
  
   <main>
     <!-- Site Name -->
@@ -70,21 +70,22 @@
     </section>
   </main>
 
-  <footer><p>COPYRIGHT 2025 BYU-PATHWAY WORLDWIDE</p>
-  <p>Author: Sampson Havor</p>
-  <p>Last Updated: <span id="lastUpdated"></span></p>
+  <footer>
+    <p>COPYRIGHT 2025 BYU-PATHWAY WORLDWIDE</p>
+    <p>Author: Sampson Havor</p>
+    <p>Last Updated: <span id="lastUpdated"></span></p>
 
-  <script>
-    // Get current date and time
-    const now = new Date();
-    // Format as e.g. "November 27, 2025, 5:40 PM"
-    const options = { 
-      year: 'numeric', month: 'long', day: 'numeric', 
-      hour: 'numeric', minute: 'numeric', 
-      hour12: true 
-    };
-    document.getElementById("lastUpdated").textContent = now.toLocaleString('en-US', options);
-  </script>
+    <script>
+      // Get current date and time
+      const now = new Date();
+      // Format as e.g. "November 27, 2025, 5:40 PM"
+      const options = { 
+        year: 'numeric', month: 'long', day: 'numeric', 
+        hour: 'numeric', minute: 'numeric', 
+        hour12: true 
+      };
+      document.getElementById("lastUpdated").textContent = now.toLocaleString('en-US', options);
+    </script>
   </footer>
 </body>
-</html>
+</html>    

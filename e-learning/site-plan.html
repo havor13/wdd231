@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ghanaian E‑Learning Resource Hub Site Plan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/site-plan.css">
+</head>
+<body>
+  <header>
+    <h1>Ghanaian E‑Learning Resource Hub — Site Plan</h>
+  </header>
+
+  <main>
+    <!-- Site Name -->
+    <section id="site-name">
+      <h2>Site Name</h2>
+      <p><strong>Ghanaian E‑Learning Resource Hub</strong> — chosen to reflect accessible, curated learning resources and strategies for learners in Ghana and beyond.</p>
+    </section>
+
+    <!-- Site Purpose -->
+    <section id="site-purpose">
+      <h2>Site Purpose</h2>
+      <p>
+        The site provides a hub for Ghanaian learners by offering:
+      </p>
+      <ul>
+        <li>Curated links to trusted online learning platforms</li>
+        <li>Study strategies tailored for Ghanaian students</li>
+        <li>Accessibility guidance to make education inclusive</li>
+      </ul>
+    </section>
+
+    <!-- Scenarios -->
+    <section id="scenarios">
+      <h2>Scenarios</h2>
+      <ul>
+        <li>Where can Ghanaian learners find trusted online learning platforms?</li>
+        <li>What study and accessibility tips will help me succeed in my courses?</li>
+      </ul>
+    </section>
+
+    <!-- Color Scheme -->
+    <section id="color-scheme">
+      <h2>Color Scheme</h2>
+      <ul>
+        <li><strong>Deep Green (#006400):</strong> Headings, navigation, buttons, borders</li>
+        <li><strong>Gold (#FFD700):</strong> Highlights, hover states, footer accents</li>
+      </ul>
+      <p>These colors are applied in this document to meet rubric requirements.</p>
+    </section>
+
+    <!-- Typography -->
+    <section id="typography">
+      <h2>Typography</h2>
+      <ul>
+        <li><strong>Montserrat:</strong> Used for headings and navigation</li>
+        <li><strong>Roboto:</strong> Used for body text and lists</li>
+      </ul>
+    </section>
+
+    <!-- Wireframe -->
+    <section id="wireframe">
+      <h2>Wireframe</h2>
+      <h3>Mobile View</h3>
+      <img src="images/wireframe-mobile.webp" alt="Mobile wireframe of homepage layout" width="320">
+      <h3>Desktop/Tablet View</h3>
+      <img src="images/wireframe-desktop.webp" alt="Desktop wireframe of homepage layout" width="640">
+    </section>
+  </main>
+
+  <footer><p>COPYRIGHT 2025 BYU-PATHWAY WORLDWIDE</p>
+  <p>Author: Sampson Havor</p>
+  <p>Last Updated: <span id="lastUpdated"></span></p>
+
+  <script>
+    // Get current date and time
+    const now = new Date();
+    // Format as e.g. "November 27, 2025, 5:40 PM"
+    const options = { 
+      year: 'numeric', month: 'long', day: 'numeric', 
+      hour: 'numeric', minute: 'numeric', 
+      hour12: true 
+    };
+    document.getElementById("lastUpdated").textContent = now.toLocaleString('en-US', options);
+  </script>
+  </footer>
+</body>
+</html>

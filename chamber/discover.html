@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Discover Kumasi - Chamber of Commerce</title>
-  <meta name="description" content="Discover Kumasi: history, demographics, events, and cultural highlights.">
+  <title>Discover Kumasi – Chamber of Commerce</title>
+  <meta name="description" content="Discover Kumasi with the Chamber of Commerce: history, demographics, events, culture, and business opportunities.">
   <meta name="author" content="Sampson Havor">
 
   <!-- Google Fonts -->
@@ -23,7 +23,7 @@
   <link rel="canonical" href="https://havor13.github.io/wdd231/chamber/discover.html">
 
   <!-- Open Graph metadata -->
-  <meta property="og:title" content="Discover Kumasi — Culture, history, and business opportunities">
+  <meta property="og:title" content="Discover Kumasi – Culture and Business Opportunities">
   <meta property="og:description" content="Explore Kumasi’s vibrant culture and Chamber resources. Learn about history, events, and opportunities that connect business with community.">
   <meta property="og:image" content="https://havor13.github.io/wdd231/chamber/images/og-discover-1200x630.jpg">
   <meta property="og:url" content="https://havor13.github.io/wdd231/chamber/discover.html">
@@ -32,7 +32,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Discover Kumasi — Culture, history, and business opportunities">
+  <meta name="twitter:title" content="Discover Kumasi – Culture and Business Opportunities">
   <meta name="twitter:description" content="Explore Kumasi’s vibrant culture and Chamber resources. Learn about history, events, and opportunities that connect business with community.">
   <meta name="twitter:image" content="https://havor13.github.io/wdd231/chamber/images/og-discover-1200x630.jpg">
 
@@ -58,8 +58,16 @@
   </header>
 
   <main id="main">
+    <!-- Main heading -->
+    <h1>Discover Kumasi – Chamber of Commerce</h1>
+
+    <!-- LocalStorage visit message -->
+    <div id="visit-message"></div>
+
+    <!-- Dynamic cards from items.mjs -->
+    <section class="cards"></section>
+
     <!-- Expanded History Section with Timeline -->
-     <h1>Discover Kumasi</h1>
     <section class="history">
       <h2>History of Kumasi</h2>
       <div class="timeline">
@@ -98,9 +106,9 @@
     <section class="gallery">
       <h2>Image Montage</h2>
       <div class="images">
-        <img src="images/kumasi-central-market.webp" alt="Kumasi Central Market">
-        <img src="images/traditional-kente-weaving.webp" alt="Traditional Kente weaving">
-        <img src="images/manhyia-palace.webp" alt="Manhyia Palace">
+        <img src="images/kumasi-central-market.webp" alt="Kumasi Central Market" loading="lazy">
+        <img src="images/traditional-kente-weaving.webp" alt="Traditional Kente weaving" loading="lazy">
+        <img src="images/manhyia-palace.webp" alt="Manhyia Palace" loading="lazy">
       </div>
     </section>
   </main>
@@ -113,6 +121,6 @@
 
   <!-- External Scripts -->
   <script src="scripts/main.js" type="module"></script>
-  <script src="scripts/discover.js" type="module"></script>
+  <script src="scripts/discover.mjs" type="module"></script>
 </body>
 </html>

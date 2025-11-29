@@ -110,7 +110,14 @@ nav { position: relative; }
 }
 .nav-links a:hover { text-decoration: underline; }
 .nav-links a.active,
-.nav-links a[aria-current="page"] { color: var(--color-gold); }
+.nav-links a[aria-current="page"],
+a.active {
+  color: var(--color-gold);
+  background-color: var(--color-dark-blue);
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
 
 /* mobile menu */
 .menu-toggle {
@@ -167,14 +174,6 @@ nav { position: relative; }
   margin-top: 1rem;
   border-bottom: 2px solid var(--color-gold);
   display: inline-block;
-}
-/* Active link badge */
-a.active {
-  color: var(--color-gold);
-  background-color: var(--color-dark-blue);
-  font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 4px;
 }
 /* CTA */
 .cta-button {
@@ -257,8 +256,6 @@ a.active {
   outline: none;
   box-shadow: 0 0 0 3px var(--color-gold-focus);
 }
-.join-page button { align-self: flex-start; }
-.join-page button.btn-primary 
 .join-page input.error,
 .join-page textarea.error,
 .join-page select.error {
@@ -276,7 +273,6 @@ input[type="hidden"] { display: none; }
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
-
 .grid-view .membership-card {
   background-color: var(--color-white);
   border-left: 6px solid var(--color-gold);
@@ -286,15 +282,8 @@ input[type="hidden"] { display: none; }
   transition: transform 0.2s ease;
 }
 
-.grid-view .membership-card:hover {
-  transform: translateY(-4px);
-}
-
 /* List View */
-.list-view {
-  display: block;
-}
-
+.list-view { display: block; }
 .list-view .membership-card {
   display: flex;
   align-items: center;
@@ -306,21 +295,12 @@ input[type="hidden"] { display: none; }
   border-radius: 8px;
   box-shadow: var(--shadow-sm);
 }
-
 .list-view .membership-card img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-right: 1rem;
+  width: 60px; height: 60px; border-radius: 50%; margin-right: 1rem;
 }
+.list-view .membership-card .details { flex: 1; }
+.list-view .membership-card .actions { margin-left: 1rem; }
 
-.list-view .membership-card .details {
-  flex: 1;
-}
-
-.list-view .membership-card .actions {
-  margin-left: 1rem;
-}
 /* =========================
    Modals
    ========================= */
@@ -366,9 +346,7 @@ input[type="hidden"] { display: none; }
   color: var(--color-white);
   text-align: center;
 }
-#weather-forecast .card img {
-  width: 50px; height: 50px; margin-top: 0.5rem;
-}
+#weather-forecast .card img { width: 50px; height: 50px; margin-top: 0.5rem; }
 .spotlight-card {
   background-color: var(--color-gold);
   color: var(--color-dark-blue);
@@ -378,7 +356,6 @@ input[type="hidden"] { display: none; }
   box-shadow: var(--shadow-sm);
   transition: transform 0.2s ease;
 }
-.spotlight-card:hover { transform: translateY(-4px); }
 .spotlight-card img { max-width: 100px; margin-bottom: 0.5rem; }
 
 /* =========================
@@ -421,6 +398,9 @@ footer a:hover { color: var(--color-gold); text-decoration: underline; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* =========================
+   Discover Cards Grid (Named Areas)
+   ========================= */
 .cards {
   display: grid;
   gap: 1rem;
@@ -435,10 +415,14 @@ footer a:hover { color: var(--color-gold); text-decoration: underline; }
     "card7"
     "card8";
 }
-
 .card:nth-child(1) { grid-area: card1; }
 .card:nth-child(2) { grid-area: card2; }
-/* …repeat up to card8 */
+.card:nth-child(3) { grid-area: card3; }
+.card:nth-child(4) { grid-area: card4; }
+.card:nth-child(5) { grid-area: card5; }
+.card:nth-child(6) { grid-area: card6; }
+.card:nth-child(7) { grid-area: card7; }
+.card:nth-child(8) { grid-area: card8; }
 
 /* Medium screens */
 @media (min-width: 641px) and (max-width: 1024px) {
@@ -460,5 +444,18 @@ footer a:hover { color: var(--color-gold); text-decoration: underline; }
       "card1 card2 card3"
       "card4 card5 card6"
       "card7 card8 card8";
+  }
+}
+
+/* =========================
+   Desktop-only Hover Effects
+   ========================= */
+@media (hover: hover) {
+  .grid-view .membership-card:hover { transform: translateY(-4px); }
+  .spotlight-card:hover { transform: translateY(-4px); }
+  .card img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-md);
   }
 }

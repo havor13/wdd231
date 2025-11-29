@@ -44,31 +44,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ✅ Company Spotlight integration (Criterion #12)
   renderSpotlights();
-});
 
-    // Set timestamp on load
-    document.addEventListener('DOMContentLoaded', () => {
-      const ts = document.getElementById('timestamp');
-      if (ts) ts.value = new Date().toISOString();
-    });
+  // ✅ Timestamp for forms
+  const ts = document.getElementById('timestamp');
+  if (ts) ts.value = new Date().toISOString();
 
-    // main.js
-const msgEl = document.getElementById("visit-message");
-const LAST_KEY = "lastVisitMs";
-const now = Date.now();
-const last = localStorage.getItem(LAST_KEY);
+  // ✅ localStorage visit message (Criterion #8)
+  const msgEl = document.getElementById("visit-message");
+  if (msgEl) {
+    const LAST_KEY = "lastVisitMs";
+    const now = Date.now();
+    const last = localStorage.getItem(LAST_KEY);
 
-let msg = "Welcome! Let us know if you have any questions.";
-if (last) {
-  const days = Math.floor((now - Number(last)) / (1000 * 60 * 60 * 24));
-  if (days < 1) {
-    msg = "Back so soon! Awesome!";
-  } else if (days === 1) {
-    msg = "You last visited 1 day ago.";
-  } else {
-    msg = `You last visited ${days} days ago.`;
+    let msg = "Welcome! Let us know if you have any questions.";
+    if (last) {
+      const days = Math.floor((now - Number(last)) / (1000 * 60 * 60 * 24));
+      if (days < 1) {
+        msg = "Back so soon! Awesome!";
+      } else if (days === 1) {
+        msg = "You last visited 1 day ago.";
+      } else {
+        msg = `You last visited ${days} days ago.`;
+      }
+    }
+    msgEl.textContent = msg;
+    localStorage.setItem(LAST_KEY, String(now));
   }
-}
-msgEl.textContent = msg;
-localStorage.setItem(LAST_KEY, String(now));
-
+});

@@ -51,3 +51,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const ts = document.getElementById('timestamp');
       if (ts) ts.value = new Date().toISOString();
     });
+
+    // main.js
+const msgEl = document.getElementById("visit-message");
+const LAST_KEY = "lastVisitMs";
+const now = Date.now();
+const last = localStorage.getItem(LAST_KEY);
+
+let msg = "Welcome! Let us know if you have any questions.";
+if (last) {
+  const days = Math.floor((now - Number(last)) / (1000 * 60 * 60 * 24));
+  if (days < 1) {
+    msg = "Back so soon! Awesome!";
+  } else if (days === 1) {
+    msg = "You last visited 1 day ago.";
+  } else {
+    msg = `You last visited ${days} days ago.`;
+  }
+}
+msgEl.textContent = msg;
+localStorage.setItem(LAST_KEY, String(now));
+

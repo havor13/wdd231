@@ -20,6 +20,7 @@ h1, h2, h3, nav, .nav-list li a {
 
 p, li, label, input, select, textarea, button {
   font-family: 'Roboto', sans-serif;
+  margin-bottom: 0.75rem; /* Better spacing */
 }
 
 /* Skip Link */
@@ -34,6 +35,7 @@ p, li, label, input, select, textarea, button {
   left: 1rem;
   top: 1rem;
   z-index: 1000;
+  outline: 2px solid #006400;
 }
 
 /* Header & Navigation */
@@ -48,6 +50,10 @@ nav button {
   padding: .5rem 1rem;
   font-weight: bold;
   cursor: pointer;
+}
+nav button:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 .nav-list {
   list-style: none;
@@ -65,6 +71,10 @@ nav button {
   background: #FFD700;
   color: #111;
   border-radius: 4px;
+}
+.nav-list li a:focus {
+  outline: 2px solid #FFD700;
+  outline-offset: 2px;
 }
 
 /* Responsive Nav */
@@ -91,6 +101,10 @@ nav button {
 .hero h1 {
   margin-bottom: 1rem;
 }
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.5rem; }
+  .hero p { font-size: 1rem; }
+}
 
 /* Grid Layout */
 .grid {
@@ -116,9 +130,11 @@ nav button {
   padding: .25rem .5rem;
   cursor: pointer;
 }
-.card button:hover {
+.card button:hover,
+.card button:focus {
   background: #FFD700;
   color: #111;
+  outline: none;
 }
 
 /* Form Styles */
@@ -139,6 +155,13 @@ nav button {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #006400;
+  box-shadow: 0 0 4px #006400;
+  outline: none;
+}
 .contact-form button {
   background: #006400;
   color: #fff;
@@ -146,7 +169,8 @@ nav button {
   padding: .75rem;
   cursor: pointer;
 }
-.contact-form button:hover {
+.contact-form button:hover,
+.contact-form button:focus {
   background: #FFD700;
   color: #111;
 }
@@ -169,6 +193,11 @@ dialog::backdrop {
   padding: .5rem 1rem;
   cursor: pointer;
 }
+#closeModal:hover,
+#closeModal:focus {
+  background: #006400;
+  color: #fff;
+}
 
 /* Footer */
 footer {
@@ -182,6 +211,8 @@ footer a {
   color: #FFD700;
   text-decoration: none;
 }
-footer a:hover {
+footer a:hover,
+footer a:focus {
   text-decoration: underline;
+  outline: none;
 }

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ghanaian E‑Learning Resource Hub | Home</title>
+  <meta name="description" content="Accessible, curated learning resources and strategies for Ghanaian learners.">
+  <meta name="author" content="Sampson Havor">
+  <meta property="og:title" content="Ghanaian E‑Learning Resource Hub">
+  <meta property="og:description" content="Curated resources, accessible by design.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourusername.github.io/wdd231/finalproject/">
+  <meta property="og:image" content="images/og-image.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav aria-label="Main navigation">
+      <button id="menuBtn" aria-expanded="false" aria-controls="primaryNav">Menu</button>
+      <ul id="primaryNav" class="nav-list" data-state="closed">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html">Student Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Ghanaian E‑Learning Resource Hub</h1>
+      <p>Curated learning resources and accessibility strategies for Ghanaian students and beyond.</p>
+    </section>
+
+    <!-- Dynamic Resource Grid -->
+    <section aria-labelledby="resourceHeading">
+      <h2 id="resourceHeading">Featured Resources</h2>
+      <div id="resourceGrid" class="grid"></div>
+    </section>
+
+    <!-- Modal -->
+    <dialog id="resourceModal" aria-labelledby="modalTitle">
+      <h3 id="modalTitle">Resource details</h3>
+      <div id="modalBody"></div>
+      <button id="closeModal">Close</button>
+    </dialog>
+  </main>
+
+  <footer>
+    <small>
+      © 2025 Ghanaian E‑Learning Resource Hub •
+      <a href="attribution.html">Attributions</a> •
+      <a href="https://youtu.be/your-video-id">Project demo</a>
+    </small>
+  </footer>
+
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

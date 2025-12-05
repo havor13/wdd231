@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Kumasi Tech Circle",
+    "category": "Community",
+    "location": "Kumasi, Ghana",
+    "description": "Local meetups and workshops on accessible web development and digital skills.",
+    "tags": ["accessibility", "web", "community"],
+    "url": "https://example.org/kumasi-tech"
+  },
+  {
+    "id": 2,
+    "name": "Ashesi University Online",
+    "category": "Course",
+    "location": "Accra, Ghana",
+    "description": "Online courses in leadership, computer science, and entrepreneurship.",
+    "tags": ["university", "leadership", "CS"],
+    "url": "https://example.org/ashesi-online"
+  },
+  {
+    "id": 3,
+    "name": "MEST Africa Academy",
+    "category": "Mentorship",
+    "location": "Accra, Ghana",
+    "description": "Mentorship and training for aspiring software entrepreneurs.",
+    "tags": ["mentorship", "startup", "software"],
+    "url": "https://example.org/mest-academy"
+  },
+  {
+    "id": 4,
+    "name": "KNUST E‑Learning",
+    "category": "Course",
+    "location": "Kumasi, Ghana",
+    "description": "Distance learning programs in engineering, business, and social sciences.",
+    "tags": ["university", "distance", "engineering"],
+    "url": "https://example.org/knust-elearning"
+  },
+  {
+    "id": 5,
+    "name": "Ghana Coding Bootcamp",
+    "category": "Course",
+    "location": "Accra, Ghana",
+    "description": "Intensive bootcamp covering HTML, CSS, JavaScript, and Python.",
+    "tags": ["coding", "bootcamp", "web"],
+    "url": "https://example.org/ghana-coding"
+  },
+  {
+    "id": 6,
+    "name": "Accra Digital Centre",
+    "category": "Community",
+    "location": "Accra, Ghana",
+    "description": "Innovation hub offering coworking, training, and digital literacy programs.",
+    "tags": ["innovation", "hub", "digital"],
+    "url": "https://example.org/accra-digital"
+  },
+  {
+    "id": 7,
+    "name": "Ghana Open University",
+    "category": "Course",
+    "location": "Online",
+    "description": "Open access courses in arts, sciences, and technology.",
+    "tags": ["open", "MOOC", "education"],
+    "url": "https://example.org/ghana-open"
+  },
+  {
+    "id": 8,
+    "name": "Women in Tech Ghana",
+    "category": "Community",
+    "location": "Accra, Ghana",
+    "description": "Community supporting women in technology through events and mentorship.",
+    "tags": ["women", "tech", "mentorship"],
+    "url": "https://example.org/women-tech"
+  },
+  {
+    "id": 9,
+    "name": "Ghana Accessibility Network",
+    "category": "Community",
+    "location": "Kumasi, Ghana",
+    "description": "Network promoting inclusive design and accessibility standards.",
+    "tags": ["accessibility", "inclusive", "design"],
+    "url": "https://example.org/ghana-accessibility"
+  },
+  {
+    "id": 10,
+    "name": "African Leadership University Online",
+    "category": "Course",
+    "location": "Online",
+    "description": "Pan‑African online programs in leadership and innovation.",
+    "tags": ["leadership", "innovation", "online"],
+    "url": "https://example.org/alu-online"
+  },
+  {
+    "id": 11,
+    "name": "Ghana STEM Mentors",
+    "category": "Mentorship",
+    "location": "Cape Coast, Ghana",
+    "description": "Mentorship program connecting students with STEM professionals.",
+    "tags": ["STEM", "mentorship", "education"],
+    "url": "https://example.org/stem-mentors"
+  },
+  {
+    "id": 12,
+    "name": "E‑Learning Africa Conference",
+    "category": "Community",
+    "location": "Accra, Ghana",
+    "description": "Annual conference showcasing innovations in e‑learning across Africa.",
+    "tags": ["conference", "elearning", "innovation"],
+    "url": "https://example.org/elearning-africa"
+  },
+  {
+    "id": 13,
+    "name": "Ghana MOOCs Hub",
+    "category": "Course",
+    "location": "Online",
+    "description": "Aggregated MOOCs from global providers tailored for Ghanaian learners.",
+    "tags": ["MOOC", "global", "education"],
+    "url": "https://example.org/ghana-moocs"
+  },
+  {
+    "id": 14,
+    "name": "Tech Needs Girls",
+    "category": "Mentorship",
+    "location": "Accra, Ghana",
+    "description": "Mentorship initiative encouraging girls to pursue coding and STEM careers.",
+    "tags": ["girls", "coding", "STEM"],
+    "url": "https://example.org/tech-needs-girls"
+  },
+  {
+    "id": 15,
+    "name": "Ghana Digital Skills Portal",
+    "category": "Course",
+    "location": "Online",
+    "description": "Government‑backed portal offering free digital skills training.",
+    "tags": ["government", "digital", "skills"],
+    "url": "https://example.org/digital-skills"
+  }
+]

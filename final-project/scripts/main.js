@@ -74,6 +74,10 @@ document.addEventListener('click', (e) => {
 
     // Show first 6 items as "featured"
     const featured = items.slice(0, 6);
+
+    // 👇 Debug log goes here
+    console.log('Featured resources:', featured);
+
     renderCards(grid, featured, prefs);
   } catch (err) {
     console.error('Initialization failed:', err);

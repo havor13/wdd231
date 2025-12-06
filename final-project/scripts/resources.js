@@ -3,7 +3,7 @@
 import { getResources } from './data.js';
 import { renderCard } from './render.js';
 
-// Simple preferences object for favorites
+// Preferences object for favorites
 let prefs = { favorites: [] };
 let items = [];
 
@@ -13,19 +13,34 @@ const modal = document.querySelector('#resourceModal');
 const modalBody = document.querySelector('#modalBody');
 const closeModalBtn = document.querySelector('#closeModal');
 
-// Fetch and render resources on page load
+// ===== Local Storage Helpers =====
+function saveFavorites() {
+  localStorage.setItem('favorites', JSON.stringify(prefs.favorites));
+}
+
+function loadFavorites() {
+  const stored = localStorage.getItem('favorites');
+  if (stored) {
+    prefs.favorites = JSON.parse(stored);
+  } else {
+    prefs.favorites = [];
+  }
+}
+
+// ===== Initialization =====
 async function init() {
+  loadFavorites(); // restore favorites from Local Storage
   items = await getResources();
   renderCards(grid, items, prefs);
 }
 
-// Render all cards
+// ===== Render Cards =====
 function renderCards(container, resources, prefs) {
   container.innerHTML = resources.map(item => renderCard(item, prefs)).join('');
   attachCardEvents(container);
 }
 
-// Attach events for details and favorites
+// ===== Attach Events =====
 function attachCardEvents(container) {
   container.querySelectorAll('.detailsBtn').forEach(btn => {
     btn.addEventListener('click', e => {
@@ -45,7 +60,7 @@ function attachCardEvents(container) {
   });
 }
 
-// Show modal with resource details
+// ===== Modal =====
 function showModal(resource) {
   modalBody.innerHTML = `
     <p><strong>${resource.name}</strong></p>
@@ -57,10 +72,9 @@ function showModal(resource) {
   modal.showModal();
 }
 
-// Close modal
 closeModalBtn.addEventListener('click', () => modal.close());
 
-// Toggle favorite
+// ===== Favorites =====
 function toggleFavorite(id, btn) {
   if (prefs.favorites.includes(id)) {
     prefs.favorites = prefs.favorites.filter(f => f !== id);
@@ -71,9 +85,10 @@ function toggleFavorite(id, btn) {
     btn.classList.add('is-favorite');
     btn.textContent = 'Unfavorite';
   }
+  saveFavorites(); // persist changes
 }
 
-// Filter resources
+// ===== Filtering =====
 filterSelect.addEventListener('change', () => {
   const category = filterSelect.value.toLowerCase();
   const filtered = category === 'all'
@@ -82,5 +97,5 @@ filterSelect.addEventListener('change', () => {
   renderCards(grid, filtered, prefs);
 });
 
-// Initialize
+// ===== Start =====
 init();

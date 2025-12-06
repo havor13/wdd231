@@ -76,7 +76,8 @@
   text-decoration: none;
   font-weight: 600;
 }
-.card a:hover { text-decoration: underline; }
+.card a:hover,
+.card a:focus { text-decoration: underline; }
 
 /* Placeholder Image */
 .placeholder-img {
@@ -97,6 +98,7 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 .detailsBtn:hover,
 .detailsBtn:focus,
@@ -108,8 +110,15 @@
 
 /* Favorite State */
 .favBtn.is-favorite {
-  background: #cc0000;
-  color: #fff;
+  background: #FFD700; /* Gold background for favorites */
+  color: #111;         /* Dark text for contrast */
+  font-weight: bold;
+  border: 1px solid #cc0000; /* Optional accent border */
+}
+.favBtn.is-favorite:hover,
+.favBtn.is-favorite:focus {
+  background: #ffcc00; /* Slightly lighter gold on hover */
+  color: #111;
 }
 
 /* Responsive tweak */

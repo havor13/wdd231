@@ -14,7 +14,8 @@ body {
   background-color: #fff;
 }
 
-h1, h2, h3, nav, .nav-list li a {
+/* Headings only */
+h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
   color: #006400; /* Deep Green */
 }
@@ -49,6 +50,7 @@ header {
   color: #fff;
   padding: 1rem;
 }
+
 nav button {
   background: #FFD700;
   border: none;
@@ -56,6 +58,7 @@ nav button {
   font-weight: bold;
   cursor: pointer;
 }
+
 .nav-list {
   list-style: none;
   display: none;
@@ -63,11 +66,24 @@ nav button {
   gap: .5rem;
   margin-top: 1rem;
 }
+
 .nav-list li a {
+  font-family: 'Montserrat', sans-serif;
   text-decoration: none;
-  color: #fff;
+  color: #fff; /* White text for contrast */
   padding: .25rem .5rem;
+  transition: color 0.2s ease, background 0.2s ease;
 }
+
+/* Hover/Focus styles for accessibility */
+.nav-list li a:hover,
+.nav-list li a:focus {
+  color: #FFD700; /* Gold text on hover/focus */
+  background: rgba(255, 255, 255, 0.1); /* subtle highlight */
+  border-radius: 4px;
+}
+
+/* Current page indicator */
 .nav-list li a[aria-current="page"] {
   background: #FFD700;
   color: #111;
@@ -134,4 +150,11 @@ footer {
   padding: 1rem;
   margin-top: 2rem;
 }
-footer a { color: #FFD700; text-decoration: none; }
+footer a { 
+  color: #FFD700; 
+  text-decoration: none; 
+}
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+}

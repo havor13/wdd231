@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Submission | Ghanaian E‑Learning Resource Hub</title>
+  <meta name="description" content="Displays submitted contact form data for the Ghanaian E‑Learning Resource Hub.">
+  <meta name="author" content="Sampson Havor">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/page.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section>
+      <h1>Form Submission Results</h1>
+      <div id="output"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>
+      © 2025 Ghanaian E‑Learning Resource Hub •
+      <a href="attributions.html">Attributions</a> •
+      <a href="https://youtu.be/your-video-id">Project demo</a>
+    </small>
+  </footer>
+
+  <script>
+    // Parse query string parameters
+    const params = new URLSearchParams(window.location.search);
+    const output = document.getElementById("output");
+
+    if (params.toString()) {
+      let html = "<ul>";
+      for (const [key, value] of params.entries()) {
+        html += `<li><strong>${key}:</strong> ${value}</li>`;
+      }
+      html += "</ul>";
+      output.innerHTML = html;
+    } else {
+      output.textContent = "No form data was submitted.";
+    }
+  </script>
+</body>
+</html>

@@ -17,7 +17,7 @@
   <meta property="og:title" content="Resources – Ghanaian E‑Learning Resource Hub">
   <meta property="og:description" content="Browse curated e‑learning platforms, study strategies, and accessibility tips tailored for Ghanaian learners.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://havor13.github.io/wdd231/resources.html">
+  <meta property="og:url" content="https://havor13.github.io/wdd231/final-project/resources.html">
   <meta property="og:image" content="https://havor13.github.io/wdd231/images/og-contact-1200x630.webp">
   <meta property="og:site_name" content="Ghanaian E‑Learning Hub">
 
@@ -29,6 +29,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/page.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -54,7 +55,10 @@
     
     <!-- Hero Section -->
     <section class="hero">
-      <img src="images/hero-banner.webp" alt="Hero banner for Ghanaian E‑Learning Resource Hub showing books, laptops, and accessibility icons">
+      <figure>
+        <img src="images/hero-banner.webp" alt="Books, laptops, and accessibility icons representing e‑learning" loading="lazy">
+        <figcaption>Empowering Ghanaian learners through accessible e‑learning resources</figcaption>
+      </figure>
       <h2>Ghanaian E‑Learning Resource Hub</h2>
       <p>Curated resources and accessibility strategies for Ghanaian learners</p>
     </section>
@@ -63,7 +67,7 @@
     <section class="filters">
       <h2>Filter Resources</h2>
       <label for="categoryFilter">Category:</label>
-      <select id="categoryFilter">
+      <select id="categoryFilter" aria-label="Filter resources by category">
         <option value="all">All</option>
         <option value="Community">Community</option>
         <option value="Course">Course</option>
@@ -78,7 +82,7 @@
     </section>
 
     <!-- Modal -->
-    <dialog id="resourceModal" aria-labelledby="modalTitle">
+    <dialog id="resourceModal" aria-labelledby="modalTitle" aria-modal="true">
       <h3 id="modalTitle">Resource details</h3>
       <div id="modalBody"></div>
       <button id="closeModal">Close</button>
@@ -88,12 +92,12 @@
   <footer>
     <small>
       © 2025 Ghanaian E‑Learning Resource Hub •
-      <a href="attribution.html">Attributions</a> •
+      <a href="attributions.html">Attributions</a> •
       <a href="https://youtu.be/your-video-id">Project demo</a>
     </small>
   </footer>
 
-  <!-- Corrected script reference -->
+  <!-- Script reference -->
   <script type="module" src="scripts/resources.js"></script>
 </body>
 </html>

@@ -1,62 +1,93 @@
-//scripts/resources.js
-import { getResources } from './data.js';
-import { loadPrefs, savePrefs } from './storage.js';
-import { renderCards } from './render.js';
+// scripts/resources.js
+// Handles loading, rendering, and filtering of resources
 
-const listContainer = document.getElementById('resourceList');
-const categoryFilter = document.getElementById('categoryFilter');
-const modal = document.getElementById('resourceModal');
-const modalBody = document.getElementById('modalBody');
-const closeModal = document.getElementById('closeModal');
+// Elements
+const resourceList = document.getElementById("resourceList");
+const categoryFilter = document.getElementById("categoryFilter");
 
-let prefs = loadPrefs();
-let items = [];
+// Load resources from JSON
+async function loadResources() {
+  try {
+    const response = await fetch("data/resources.json");
+    const resources = await response.json();
+    renderResources(resources);
 
-// Modal helpers
-function openModal(content) {
-  modalBody.innerHTML = content;
-  modal.showModal();
+    // Attach filter event
+    categoryFilter.addEventListener("change", () => {
+      const selected = categoryFilter.value.toLowerCase();
+      if (selected === "all") {
+        renderResources(resources);
+      } else {
+        const filtered = resources.filter(
+          (r) => r.category.toLowerCase() === selected
+        );
+        renderResources(filtered);
+      }
+    });
+  } catch (err) {
+    console.error("Failed to load resources:", err);
+    resourceList.innerHTML = "<p>Error loading resources.</p>";
+  }
 }
-closeModal?.addEventListener('click', () => modal.close());
 
-// Event delegation for card buttons
-document.addEventListener('click', (e) => {
-  const card = e.target.closest('.card');
-  if (!card) return;
-  const id = Number(card.dataset.id);
-
-  if (e.target.classList.contains('detailsBtn')) {
-    const item = items.find(x => x.id === id);
-    openModal(`
-      <h3>${item.name}</h3>
-      <p>${item.description}</p>
-      <p><strong>Category:</strong> ${item.category}</p>
-      <p><strong>Location:</strong> ${item.location}</p>
-      <a href="${item.url}" target="_blank" rel="noopener">Visit resource</a>
-    `);
+// Render resource cards
+function renderResources(resources) {
+  resourceList.innerHTML = ""; // clear existing
+  if (!resources.length) {
+    resourceList.innerHTML = "<p>No resources found.</p>";
+    return;
   }
 
-  if (e.target.classList.contains('favBtn')) {
-    const set = new Set(prefs.favorites);
-    set.has(id) ? set.delete(id) : set.add(id);
-    prefs.favorites = [...set];
-    savePrefs(prefs);
-    renderCards(listContainer, items, prefs);
-  }
-});
+  resources.forEach((res) => {
+    const card = document.createElement("div");
+    card.className = "resource-card";
 
-// Filter dropdown
-categoryFilter?.addEventListener('change', () => {
-  const value = categoryFilter.value;
-  let filtered = items;
-  if (value !== 'all') {
-    filtered = items.filter(x => x.category === value);
-  }
-  renderCards(listContainer, filtered, prefs);
-});
+    card.innerHTML = `
+      <h3>${res.name}</h3>
+      <p><strong>Category:</strong> ${res.category}</p>
+      <p><strong>Location:</strong> ${res.location}</p>
+      <p>${res.description}</p>
+      <p><strong>Tags:</strong> ${res.tags.join(", ")}</p>
+      <a href="${res.url}" target="_blank" rel="noopener">Visit Site</a>
+      <button class="detailsBtn" data-id="${res.id}">Details</button>
+    `;
 
-// Init
-(async function init() {
-  items = await getResources();
-  renderCards(listContainer, items, prefs);
-})();
+    resourceList.appendChild(card);
+  });
+
+  // Attach modal details
+  attachDetails(resources);
+}
+
+// Show details in modal
+function attachDetails(resources) {
+  const detailButtons = document.querySelectorAll(".detailsBtn");
+  const modal = document.getElementById("resourceModal");
+  const modalContent = document.getElementById("modalContent");
+  const closeModal = document.getElementById("closeModal");
+
+  detailButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = parseInt(btn.dataset.id, 10);
+      const res = resources.find((r) => r.id === id);
+      if (res) {
+        modalContent.innerHTML = `
+          <h2>${res.name}</h2>
+          <p><strong>Category:</strong> ${res.category}</p>
+          <p><strong>Location:</strong> ${res.location}</p>
+          <p>${res.description}</p>
+          <p><strong>Tags:</strong> ${res.tags.join(", ")}</p>
+          <a href="${res.url}" target="_blank" rel="noopener">Visit Site</a>
+        `;
+        modal.showModal();
+      }
+    });
+  });
+
+  closeModal.addEventListener("click", () => {
+    modal.close();
+  });
+}
+
+// Initialize
+loadResources();

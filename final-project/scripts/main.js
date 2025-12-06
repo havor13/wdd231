@@ -1,13 +1,14 @@
 // scripts/main.js
 import { getResources } from './data.js';
 import { loadPrefs, savePrefs } from './storage.js';
-import { renderCards } from './render.js';
+import { renderCards, renderMessage } from './render.js';
 
 // DOM references
 const menuBtn = document.getElementById('menuBtn');
 const navList = document.getElementById('primaryNav');
 const grid = document.getElementById('resourceGrid');
 const modal = document.getElementById('resourceModal');
+const modalTitle = document.getElementById('modalTitle');
 const modalBody = document.getElementById('modalBody');
 const closeModal = document.getElementById('closeModal');
 
@@ -26,10 +27,18 @@ menuBtn?.addEventListener('click', () => {
 /* -----------------------
    Modal Helpers
 ------------------------ */
-function openModal(content) {
-  modalBody.innerHTML = content;
+function openModal(item) {
+  modalTitle.textContent = item.name;
+  modalBody.innerHTML = `
+    <p>${item.description}</p>
+    <p><strong>Category:</strong> ${item.category}</p>
+    <p><strong>Location:</strong> ${item.location}</p>
+    <p><strong>Tags:</strong> ${item.tags.join(', ')}</p>
+    <p><a href="${item.url}" target="_blank" rel="noopener">Visit resource</a></p>
+  `;
   modal.showModal();
 }
+
 closeModal?.addEventListener('click', () => modal.close());
 
 /* -----------------------
@@ -44,13 +53,7 @@ document.addEventListener('click', (e) => {
 
   // Details button
   if (e.target.classList.contains('detailsBtn') && item) {
-    openModal(`
-      <h3>${item.name}</h3>
-      <p>${item.description}</p>
-      <p><strong>Category:</strong> ${item.category}</p>
-      <p><strong>Location:</strong> ${item.location}</p>
-      <a href="${item.url}" target="_blank" rel="noopener">Visit resource</a>
-    `);
+    openModal(item);
   }
 
   // Favorite button
@@ -74,7 +77,7 @@ document.addEventListener('click', (e) => {
     items = await getResources();
 
     if (!items.length) {
-      grid.innerHTML = `<p>No resources available at the moment. Please try again later.</p>`;
+      renderMessage(grid, "No resources available at the moment. Please try again later.");
       return;
     }
 
@@ -83,6 +86,6 @@ document.addEventListener('click', (e) => {
     renderCards(grid, featured, prefs);
   } catch (err) {
     console.error('Initialization failed:', err);
-    grid.innerHTML = `<p>Error loading resources. Please refresh the page.</p>`;
+    renderMessage(grid, "Error loading resources. Please refresh the page.");
   }
 })();

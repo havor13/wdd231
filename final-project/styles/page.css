@@ -18,19 +18,6 @@
   color: #333;
 }
 
-/* Hero Section (page-specific) */
-.hero img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-.hero h2 {
-  color: #006400;
-  margin-bottom: 0.5rem;
-}
-.hero p { color: #444; }
-
 /* Filter Controls */
 .filters {
   background: #f9f9f9;
@@ -60,15 +47,15 @@
 }
 
 /* Resource Listing Grid */
-#resourceList {
+#resourceGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
   padding: 1rem;
 }
 
-/* Resource Cards (page-specific hover) */
-.resource-card {
+/* Resource Cards */
+.card {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -76,21 +63,33 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.resource-card:hover {
+.card:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
-.resource-card a {
+.card h3 { margin-bottom: .5rem; color: #0077cc; }
+.card p { margin: 0.25rem 0; font-size: 0.95rem; color: #444; }
+.card a {
   display: inline-block;
   margin-top: 0.5rem;
   color: #0077cc;
   text-decoration: none;
   font-weight: 600;
 }
-.resource-card a:hover { text-decoration: underline; }
+.card a:hover { text-decoration: underline; }
 
-/* Details Button */
-.detailsBtn {
+/* Placeholder Image */
+.placeholder-img {
+  width: 100%;
+  height: 150px;
+  background: #eee;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+/* Buttons */
+.detailsBtn,
+.favBtn {
   margin-top: 0.75rem;
   padding: 0.4rem 0.8rem;
   background: #006400;
@@ -100,84 +99,22 @@
   cursor: pointer;
 }
 .detailsBtn:hover,
-.detailsBtn:focus {
+.detailsBtn:focus,
+.favBtn:hover,
+.favBtn:focus {
   background: #FFD700;
   color: #111;
 }
 
-/* ==========================
-   Contact Page Styles
-========================== */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 1rem;
-}
-
-.contact-form label {
-  font-weight: bold;
-  color: #006400;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  padding: .5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  border-color: #006400;
-  box-shadow: 0 0 4px #006400;
-  outline: none;
-}
-
-.contact-form button {
-  background: #006400;
+/* Favorite State */
+.favBtn.is-favorite {
+  background: #cc0000;
   color: #fff;
-  border: none;
-  padding: .75rem;
-  cursor: pointer;
-  border-radius: 4px;
 }
 
-.contact-form button:hover,
-.contact-form button:focus {
-  background: #FFD700;
-  color: #111;
-}
-
-/* ==========================
-   Attribution Page Styles
-========================== */
-.attributions {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-}
-
-.attributions h3 {
-  color: #006400;
-  margin-top: 1.5rem;
-}
-
-.attributions ul {
-  list-style: disc;
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.attributions a {
-  color: #0077cc;
-  text-decoration: none;
-}
-
-.attributions a:hover {
-  text-decoration: underline;
+/* Responsive tweak */
+@media (max-width: 400px) {
+  #resourceGrid {
+    grid-template-columns: 1fr;
+  }
 }

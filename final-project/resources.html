@@ -41,28 +41,21 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="resources.html" aria-current="page">Resources</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="profile.html">Student Profile</a></li>
+        <li><a href="final.html">Student Profile</a></li>
       </ul>
     </nav>
   </header>
 
-  <main id="main">
-    <!-- Intro Section -->
-    <section class="intro">
-      <h1>Resources</h1>
-      <p>Explore curated e‑learning platforms, study strategies, and accessibility tips tailored for Ghanaian learners.</p>
-    </section>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-      <figure>
-        <img src="images/hero-banner.webp" alt="Books, laptops, and accessibility icons representing e‑learning" loading="lazy">
-        <figcaption>Empowering Ghanaian learners through accessible e‑learning resources</figcaption>
-      </figure>
-      <h2>Ghanaian E‑Learning Resource Hub</h2>
-      <p>Curated resources and accessibility strategies for Ghanaian learners</p>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero hero-resources">
+    <div class="hero-content">
+      <h1>Explore Resources</h1>
+      <p>Curated e‑learning platforms, study strategies, and accessibility tips tailored for Ghanaian learners.</p>
+    </div>
+    <img src="images/hero-resources.webp" alt="Books, laptops, and accessibility icons representing e‑learning" class="hero-image" loading="lazy">
+  </section>
 
+  <main id="main">
     <!-- Filter Controls -->
     <section class="filters">
       <h2>Filter Resources</h2>
@@ -77,8 +70,9 @@
 
     <!-- Resource Listing -->
     <section aria-labelledby="resourceListHeading">
-      <h2 id="resourceListHeading">All Resources</h2>
-      <div id="resourceList" class="grid"></div>
+      <h2 id="resourceListHeading">Available Resources</h2>
+      <!-- Updated ID here -->
+      <div id="resourceGrid" class="grid"></div>
     </section>
 
     <!-- Modal -->

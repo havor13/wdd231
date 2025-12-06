@@ -1,7 +1,7 @@
 // scripts/main.js
 import { getResources } from './data.js';
-import { loadPrefs, savePrefs } from './storage.js';
-import { renderCards, renderMessage } from './render.js';
+import { loadPrefs, savePrefs, toggleFavorite } from './storage.js';
+import { renderCards, renderMessage, renderCard } from './render.js';
 
 // DOM references
 const menuBtn = document.getElementById('menuBtn');
@@ -29,13 +29,8 @@ menuBtn?.addEventListener('click', () => {
 ------------------------ */
 function openModal(item) {
   modalTitle.textContent = item.name;
-  modalBody.innerHTML = `
-    <p>${item.description}</p>
-    <p><strong>Category:</strong> ${item.category}</p>
-    <p><strong>Location:</strong> ${item.location}</p>
-    <p><strong>Tags:</strong> ${item.tags.join(', ')}</p>
-    <p><a href="${item.url}" target="_blank" rel="noopener">Visit resource</a></p>
-  `;
+  // Reuse renderCard for consistent markup
+  modalBody.innerHTML = renderCard(item, prefs);
   modal.showModal();
 }
 
@@ -50,20 +45,16 @@ document.addEventListener('click', (e) => {
 
   const id = Number(card.dataset.id);
   const item = items.find(x => x.id === id);
+  if (!item) return;
 
   // Details button
-  if (e.target.classList.contains('detailsBtn') && item) {
+  if (e.target.classList.contains('detailsBtn')) {
     openModal(item);
   }
 
   // Favorite button
   if (e.target.classList.contains('favBtn')) {
-    const set = new Set(prefs.favorites);
-    set.has(id) ? set.delete(id) : set.add(id);
-    prefs.favorites = [...set];
-    savePrefs(prefs);
-
-    // Re-render featured grid with updated favorites
+    prefs = toggleFavorite(id); // ✅ use helper from storage.js
     const featured = items.slice(0, 6);
     renderCards(grid, featured, prefs);
   }

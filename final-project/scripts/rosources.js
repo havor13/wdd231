@@ -1,93 +1,86 @@
 // scripts/resources.js
-// Handles loading, rendering, and filtering of resources
 
-// Elements
-const resourceList = document.getElementById("resourceList");
-const categoryFilter = document.getElementById("categoryFilter");
+import { getResources } from './data.js';
+import { renderCard } from './render.js';
 
-// Load resources from JSON
-async function loadResources() {
-  try {
-    const response = await fetch("data/resources.json");
-    const resources = await response.json();
-    renderResources(resources);
+// Simple preferences object for favorites
+let prefs = { favorites: [] };
+let items = [];
 
-    // Attach filter event
-    categoryFilter.addEventListener("change", () => {
-      const selected = categoryFilter.value.toLowerCase();
-      if (selected === "all") {
-        renderResources(resources);
-      } else {
-        const filtered = resources.filter(
-          (r) => r.category.toLowerCase() === selected
-        );
-        renderResources(filtered);
-      }
-    });
-  } catch (err) {
-    console.error("Failed to load resources:", err);
-    resourceList.innerHTML = "<p>Error loading resources.</p>";
-  }
+const grid = document.querySelector('#resourceGrid');
+const filterSelect = document.querySelector('#categoryFilter');
+const modal = document.querySelector('#resourceModal');
+const modalBody = document.querySelector('#modalBody');
+const closeModalBtn = document.querySelector('#closeModal');
+
+// Fetch and render resources on page load
+async function init() {
+  items = await getResources();
+  renderCards(grid, items, prefs);
 }
 
-// Render resource cards
-function renderResources(resources) {
-  resourceList.innerHTML = ""; // clear existing
-  if (!resources.length) {
-    resourceList.innerHTML = "<p>No resources found.</p>";
-    return;
-  }
-
-  resources.forEach((res) => {
-    const card = document.createElement("div");
-    card.className = "resource-card";
-
-    card.innerHTML = `
-      <h3>${res.name}</h3>
-      <p><strong>Category:</strong> ${res.category}</p>
-      <p><strong>Location:</strong> ${res.location}</p>
-      <p>${res.description}</p>
-      <p><strong>Tags:</strong> ${res.tags.join(", ")}</p>
-      <a href="${res.url}" target="_blank" rel="noopener">Visit Site</a>
-      <button class="detailsBtn" data-id="${res.id}">Details</button>
-    `;
-
-    resourceList.appendChild(card);
-  });
-
-  // Attach modal details
-  attachDetails(resources);
+// Render all cards
+function renderCards(container, resources, prefs) {
+  container.innerHTML = resources.map(item => renderCard(item, prefs)).join('');
+  attachCardEvents(container);
 }
 
-// Show details in modal
-function attachDetails(resources) {
-  const detailButtons = document.querySelectorAll(".detailsBtn");
-  const modal = document.getElementById("resourceModal");
-  const modalContent = document.getElementById("modalContent");
-  const closeModal = document.getElementById("closeModal");
-
-  detailButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const id = parseInt(btn.dataset.id, 10);
-      const res = resources.find((r) => r.id === id);
-      if (res) {
-        modalContent.innerHTML = `
-          <h2>${res.name}</h2>
-          <p><strong>Category:</strong> ${res.category}</p>
-          <p><strong>Location:</strong> ${res.location}</p>
-          <p>${res.description}</p>
-          <p><strong>Tags:</strong> ${res.tags.join(", ")}</p>
-          <a href="${res.url}" target="_blank" rel="noopener">Visit Site</a>
-        `;
-        modal.showModal();
-      }
+// Attach events for details and favorites
+function attachCardEvents(container) {
+  container.querySelectorAll('.detailsBtn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const card = e.target.closest('.card');
+      const id = card.dataset.id;
+      const resource = items.find(r => r.id == id);
+      showModal(resource);
     });
   });
 
-  closeModal.addEventListener("click", () => {
-    modal.close();
+  container.querySelectorAll('.favBtn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const card = e.target.closest('.card');
+      const id = card.dataset.id;
+      toggleFavorite(id, btn);
+    });
   });
 }
+
+// Show modal with resource details
+function showModal(resource) {
+  modalBody.innerHTML = `
+    <p><strong>${resource.name}</strong></p>
+    <p>${resource.description}</p>
+    <p><strong>Location:</strong> ${resource.location}</p>
+    <p><strong>Tags:</strong> ${resource.tags.join(', ')}</p>
+    <a href="${resource.url}" target="_blank">Visit Resource</a>
+  `;
+  modal.showModal();
+}
+
+// Close modal
+closeModalBtn.addEventListener('click', () => modal.close());
+
+// Toggle favorite
+function toggleFavorite(id, btn) {
+  if (prefs.favorites.includes(id)) {
+    prefs.favorites = prefs.favorites.filter(f => f !== id);
+    btn.classList.remove('is-favorite');
+    btn.textContent = 'Favorite';
+  } else {
+    prefs.favorites.push(id);
+    btn.classList.add('is-favorite');
+    btn.textContent = 'Unfavorite';
+  }
+}
+
+// Filter resources
+filterSelect.addEventListener('change', () => {
+  const category = filterSelect.value.toLowerCase();
+  const filtered = category === 'all'
+    ? items
+    : items.filter(r => r.category.toLowerCase() === category);
+  renderCards(grid, filtered, prefs);
+});
 
 // Initialize
-loadResources();
+init();

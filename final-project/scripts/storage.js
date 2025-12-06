@@ -35,6 +35,11 @@ export function loadPrefs() {
 
     const parsed = JSON.parse(stored);
 
+    // Validate parsed data
+    if (typeof parsed !== 'object' || parsed === null) {
+      return { ...DEFAULTS };
+    }
+
     // Merge with defaults to ensure all keys exist
     return { ...DEFAULTS, ...parsed };
   } catch (err) {
@@ -52,6 +57,7 @@ export function clearPrefs() {
   } catch (err) {
     console.error('Failed to clear preferences:', err);
   }
+  return { ...DEFAULTS };
 }
 
 /**
@@ -61,6 +67,10 @@ export function clearPrefs() {
  * @returns {Object} updated preferences
  */
 export function updatePref(key, value) {
+  if (!(key in DEFAULTS)) {
+    console.warn(`Unknown preference key: ${key}`);
+    return loadPrefs();
+  }
   const prefs = loadPrefs();
   prefs[key] = value;
   savePrefs(prefs);
@@ -73,4 +83,25 @@ export function updatePref(key, value) {
  */
 export function getPrefs() {
   return loadPrefs();
+}
+
+/**
+ * Toggle a resource ID in favorites
+ * @param {number|string} id - resource ID
+ * @returns {Object} updated preferences
+ */
+export function toggleFavorite(id) {
+  const prefs = loadPrefs();
+  const set = new Set(prefs.favorites.map(String)); // normalize IDs to strings
+  const strId = String(id);
+
+  if (set.has(strId)) {
+    set.delete(strId);
+  } else {
+    set.add(strId);
+  }
+
+  prefs.favorites = [...set];
+  savePrefs(prefs);
+  return prefs;
 }

@@ -84,3 +84,20 @@ document.addEventListener('click', (e) => {
     renderMessage(grid, "Error loading resources. Please refresh the page.");
   }
 })();
+
+// ==========================
+// Dynamic Footer Script
+// ==========================
+
+// Auto-update year in footer
+const yearSpan = document.getElementById("year");
+if (yearSpan) {
+  const currentYear = new Date().getFullYear();
+  yearSpan.textContent = currentYear;
+}
+
+// Auto-update last modified date in footer
+const lastModifiedSpan = document.getElementById("lastModified");
+if (lastModifiedSpan) {
+  lastModifiedSpan.textContent = document.lastModified;
+}

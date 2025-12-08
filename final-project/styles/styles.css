@@ -51,12 +51,22 @@ header {
   padding: 1rem;
 }
 
-nav button {
-  background: #FFD700;
+/* Fixed Menu Button Contrast */
+#menuBtn {
+  background-color: #FFD700; /* gold background */
+  color: #111;               /* dark text for contrast */
   border: none;
   padding: .5rem 1rem;
   font-weight: bold;
   cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#menuBtn:hover,
+#menuBtn:focus {
+  background-color: #ffcc00; /* lighter gold on hover */
+  color: #111;               /* keep dark text for readability */
 }
 
 .nav-list {
@@ -93,7 +103,7 @@ nav button {
 /* Responsive Nav */
 .nav-list[data-state="open"] { display: flex; }
 @media (min-width: 768px) {
-  nav button { display: none; }
+  #menuBtn { display: none; }
   .nav-list {
     display: flex !important;
     flex-direction: row;
@@ -135,6 +145,7 @@ dialog::backdrop { background: rgba(0,0,0,.5); }
 #closeModal {
   margin-top: 1rem;
   background: #FFD700;
+  color: #111; /* ensure contrast */
   border: none;
   padding: .5rem 1rem;
   cursor: pointer;
@@ -159,11 +170,19 @@ footer a:focus {
   text-decoration: underline;
 }
 
+/* ==========================
+   Contact Form (Fixed Contrast)
+========================== */
 .contact-form {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   padding: 30px;
   border-radius: 12px;
-  color: #fff;
+  color: #111; /* dark text for readability */
+}
+
+.contact-form label {
+  font-weight: bold;
+  color: #111; /* ensure labels are visible */
 }
 
 .contact-form input,
@@ -173,8 +192,22 @@ footer a:focus {
   padding: 12px;
   margin: 10px 0;
   border-radius: 8px;
-  border: none;
+  border: 1px solid #ccc;
+  background-color: #fff; /* white background */
+  color: #111;            /* dark text */
   outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #666; /* visible placeholder text */
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #006400;     /* green accent on focus */
+  box-shadow: 0 0 4px #006400;
 }
 
 .contact-form button {
@@ -185,9 +218,11 @@ footer a:focus {
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.contact-form button:hover {
+.contact-form button:hover,
+.contact-form button:focus {
   transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }

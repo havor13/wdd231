@@ -70,4 +70,45 @@ document.addEventListener("DOMContentLoaded", () => {
     msgEl.textContent = msg;
     localStorage.setItem(LAST_KEY, String(now));
   }
+
+  // ✅ Animate membership cards on page load
+  document.querySelectorAll(".membership-card").forEach((card, i) => {
+    setTimeout(() => {
+      card.classList.add("visible");
+    }, i * 200); // staggered animation
+  });
+
+  // ✅ Modal open/close logic
+  document.querySelectorAll(".info-button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const modalId = btn.getAttribute("data-modal");
+      const modal = document.getElementById(modalId);
+      if (modal) modal.removeAttribute("hidden");
+    });
+  });
+
+  document.querySelectorAll(".modal__close").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const modal = btn.closest(".modal");
+      if (modal) modal.setAttribute("hidden", "");
+    });
+  });
+
+  // Close modal when clicking outside content
+  document.querySelectorAll(".modal").forEach(modal => {
+    modal.addEventListener("click", e => {
+      if (e.target === modal) modal.setAttribute("hidden", "");
+    });
+  });
+
+  // ✅ Keyboard accessibility: close modal with Esc key
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+      document.querySelectorAll(".modal").forEach(modal => {
+        if (!modal.hasAttribute("hidden")) {
+          modal.setAttribute("hidden", "");
+        }
+      });
+    }
+  });
 });

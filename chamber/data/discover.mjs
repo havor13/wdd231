@@ -4,7 +4,7 @@ import { items } from "../data/items.mjs";
 // Find the container in discover.html
 const container = document.querySelector(".cards");
 
-// Loop through items and build cards
+// Loop through items and build cards dynamically
 items.forEach((item, index) => {
   const { name, address, description, img } = item;
 
@@ -14,11 +14,12 @@ items.forEach((item, index) => {
   // Assign grid area name dynamically (card1, card2, …)
   card.style.gridArea = `card${index + 1}`;
 
+  // Build card content
   card.innerHTML = `
-    <h2>${name}</h2>
     <figure>
-      <img src="${img}" alt="${name}" width="300" height="200" loading="lazy">
+      <img src="${img}" alt="${name}" width="300" height="200" loading="lazy" class="hover-effect">
     </figure>
+    <h2>${name}</h2>
     <address>${address}</address>
     <p>${description}</p>
     <button type="button" class="learn-more">Learn More</button>
@@ -27,9 +28,11 @@ items.forEach((item, index) => {
   container.appendChild(card);
 });
 
-// Optional: add basic button behavior
+// Add button behavior for "Learn More"
 container.addEventListener("click", (e) => {
   if (e.target.classList.contains("learn-more")) {
-    alert("More details coming soon!");
+    const card = e.target.closest(".card");
+    const title = card.querySelector("h2").textContent;
+    alert(`More details about ${title} coming soon!`);
   }
 });

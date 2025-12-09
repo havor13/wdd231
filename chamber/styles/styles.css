@@ -507,9 +507,4 @@ footer a:hover { color: var(--color-gold); text-decoration: underline; }
   }
 }
 
-.card img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
+
